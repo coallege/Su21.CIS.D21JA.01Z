@@ -1,0 +1,8 @@
+1a.
+   unsigned 348263 + 73c698 =  a848fb (No Overflow)
+1b.
+   unsigned 98ea7f - 89ff63 =  eeb1c  (No Underflow)
+1c.
+     signed 396fe2 + 538aaa = -730573 (Underflow)
+1d.
+     signed a689be - b8fde3 =  6d8bdb (???)
