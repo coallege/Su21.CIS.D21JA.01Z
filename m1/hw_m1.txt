@@ -6,3 +6,58 @@
      signed 396fe2 + 538aaa = -730573 (Underflow)
 1d.
      signed a689be - b8fde3 =  6d8bdb (???)
+2.
+   floating point of 6.9 where word size is 32 bits.
+
+   struct f32 {
+      bit sign,
+      bit exp[8],
+      bit mantissa[23]
+   };
+
+   .sign = 0b0 // positive
+
+   Convert 6 to binary
+      6 -> (1)(4) + (1)(2) + (0)(4) -> 0b110
+
+   Convert .9 to binary
+      .9 * 2 -> [1].8 -> 1
+
+      .8 * 2 -> [1].6 -> 1
+      .6 * 2 -> [1].2 -> 1
+      .2 * 2 -> [0].4 -> 0
+      .4 * 2 -> [0].8 -> 0
+
+      It repeats:
+
+      .9 -> 0b.1[1100]
+
+   Join and normalize
+      0b110.1[1100]
+
+      Move the decimal place 2 to the left
+      0b1.101[1100]
+
+      .exp = 2 + bias where bias = 127
+      .exp = 129 = 0b10000001
+
+   Construct mantissa
+      0b1.10b1[1100]
+
+      Remove front, we're only worried about the fractional part.
+      .101[1100]
+
+      We have 23 bits so let's extend the repeating part to fill them.
+      .mantissa = 0b10111001100110011001100
+
+      Obviously there is a loss of precision.
+
+   Finally
+      f32 answer = {
+         .sign     = 0b0
+         .exp      = 0b10000001
+         .mantissa = 0b10111001100110011001100
+                   =   10111001100110011001100
+      }
+
+      0b01000000110111001100110011001100 -> 0x40dccccc
