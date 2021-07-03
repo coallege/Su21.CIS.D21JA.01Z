@@ -1,11 +1,12 @@
 1a.
-   unsigned 348263 + 73c698 =  a848fb (No Overflow)
+   unsigned 0x348263 + 0x73c698 =  0xa848fb (No Overflow)
 1b.
-   unsigned 98ea7f - 89ff63 =  eeb1c  (No Underflow)
+   unsigned 0x98ea7f - 0x89ff63 =  0xeeb1c  (No Overflow)
 1c.
-     signed 396fe2 + 538aaa = -730573 (Underflow)
+     signed 0x396fe2 + 0x538aaa =  0x8cfa8c
+                                = -0x730573 (Overflow)
 1d.
-     signed a689be - b8fde3 =  6d8bdb (???)
+     signed 0xa689be - 0xb8fde3 =  0x6d8bdb (Overflow)
 2.
    floating point of 6.9 where word size is 32 bits.
 
