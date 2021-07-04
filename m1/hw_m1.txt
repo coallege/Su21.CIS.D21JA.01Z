@@ -3,10 +3,9 @@
 1b.
    unsigned 0x98ea7f - 0x89ff63 =  0xeeb1c  (No Overflow)
 1c.
-     signed 0x396fe2 + 0x538aaa =  0x8cfa8c
-                                = -0x730573 (Overflow)
+     signed 0x396fe2 + 0x538aaa =  0x8cfa8c (Overflow)
 1d.
-     signed 0xa689be - 0xb8fde3 =  0x6d8bdb (Overflow)
+     signed 0xa689be - 0xb8fde3 =  0xed8bdb (No Overflow)
 2.
    floating point of 6.9 where word size is 32 bits.
 
@@ -58,7 +57,6 @@
          .sign     = 0b0
          .exp      = 0b10000001
          .mantissa = 0b10111001100110011001100
-                   =   10111001100110011001100
       }
 
       0b01000000110111001100110011001100 -> 0x40dccccc
