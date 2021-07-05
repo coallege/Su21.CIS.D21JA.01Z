@@ -9,4 +9,4 @@ usage:
 .PHONY: m*
 .SILENT: m*
 m*:
-	@make $@
+	@make -C $@

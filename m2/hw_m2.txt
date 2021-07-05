@@ -1,89 +1,79 @@
 3.
    What is the sum of each pair of binary integers?
-   a. 10101111 + 1101101
-   b. 10010111 + 1111111
-   c. 01110101 + 1010110
+   a. 0b10101111 + 0b1101101
+      0b100011100
+
+   b. 0b10010111 + 0b1111111
+      0b100010110
+
+   c. 0b01110101 + 0b1010110
+      0b011001011
 
 6.
    What is the minimum number of binary bits needed to represent each of the
    following unsigned decimal integers?
    a. 4095
+      12
    b. 65534
+      16
    c. 42319
+      16
 
 8.
    What is the binary representation of the following hexadecimal numbers?
-   a. 0126F9D4
-   b. 6ACDFA95
-   c. F69BDC2A
+   a. 0x0126F9D4
+      0b1001001101111100111010100
+   b. 0x6ACDFA95
+      0b1101010110011011111101010010101
+   c. 0xF69BDC2A
+      0b11110110100110111101110000101010
 
 9.
    What is the unsigned decimal representation of each of the following
    hexadecimal integers?
-   a. 3A
-   b. 1BF
-   c. 1001
+   a. 0x3A
+      58
+   b. 0x1BF
+      447
+   c. 0x1001
+      4097
 
 11.
    What is the 16-bit hexadecimal representation of each of the following signed
    decimal integers?
-   a. -24
-   b. -331
+   a. -0x24
+      0xffdd
+   b. -0x331
+      0xfcd0
 
 14.
    The following 16 bit hexadecimal numbers represent signed integers. Convert
    each to decimal.
-   a. 4CD2
-   b. 8230
+   a. 0x4CD2
+      19666
+   b. 0x8230
+      -32208
 
 17.
    What is the 8-bit binary (two’s-complement) representation of each of the
    following signed decimal integers?
    a. -5
+      0b11111100
    b. -42
+      0b11010111
    c. -16
+      0b11110001
 
 19.
    What is the sum of each pair of hexadecimal integers?
-   a. 6B4 + 3FE
-   b. A49 + 6BD
+   a. 0x6B4 + 0x3FE
+      0xab2
+   b. 0xA49 + 0x6BD
+      0x1106
 
 20.
    What is the sum of each pair of hexadecimal integers?
-   a. 7C4 + 3BE
-   b. B69 + 7AD
-
-Answers
-
-3.
-   a = 284
-   b = 278
-   c = 203
-6.
-   a = 12
-   b = 16
-   c = 16
-8.
-   a = 1001001101111100111010100
-   b = 1101010110011011111101010010101
-   c = 11110110100110111101110000101010
-9.
-   a = 58
-   b = 447
-   c = 4097
-11.
-   a = ffe8
-   b = feb5
-14.
-   a = 19666
-   b = 33328
-17.
-   a = 11111011
-   b = 11010110
-   c = 11110000
-19.
-   a = 2738
-   b = 4358
-20.
-   a = 2946
-   b = 4886
+   a. 0x7C4 + 0x3BE
+      0xb82
+   b. 0xB69 + 0x7AD
+      0x1316
