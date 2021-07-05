@@ -1,11 +1,15 @@
 1a.
-   unsigned 0x348263 + 0x73c698 =  0xa848fb (No Overflow)
+   unsigned 0x348263 + 0x73c698 = 0xa848fb (No Overflow)
 1b.
-   unsigned 0x98ea7f - 0x89ff63 =  0xeeb1c  (No Overflow)
+   unsigned 0x98ea7f - 0x89ff63 = 0xeeb1c  (No Overflow)
 1c.
-     signed 0x396fe2 + 0x538aaa =  0x8cfa8c (Overflow)
+   signed 0x396fe2 + 0x538aaa (Overflow)
+      real byte value =  0x8cfa8c
+      signed meaning  = -0x730574
 1d.
-     signed 0xa689be - 0xb8fde3 =  0xed8bdb (No Overflow)
+   signed 0xa689be - 0xb8fde3 (No Overflow)
+      real byte value =  0xed8bdb
+      signed meaning  = -0x127425
 2.
    floating point of 6.9 where word size is 32 bits.
 
