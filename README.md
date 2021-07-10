@@ -1,5 +1,7 @@
 # Intro to x86 Assembly
 
+**MICROSOFT MICROBE ASSEMBLER**
+
 <img src="res/icon.png" width="150px"/>
 
 This is probably gonna be a pretty cool class. The professor is just immensely
@@ -19,3 +21,7 @@ has any questions to answer? What if I have no questions to ask?
 [`m8`](m8)|`2021.07.27`|`2021.08.02`
 [`m9`](m9)|`2021.07.27`|`2021.08.02`
 [`z1`](z1)|`2021.07.27`|`2021.08.06`
+
+## resources
+
+- [Irvine32 Docs](http://csc.csudh.edu/mmccullough/asm/help/)

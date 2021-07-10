@@ -31,3 +31,32 @@ What is the best way to show "to the power of" in an 8 bit style text editor?
    </ul>
 </blockquote>
 </blockquote>
+
+<blockquote>
+Hex numbers past 9
+<br/><br/>
+A - 10
+<br/><br/>
+B - 11
+<br/><br/>
+C - 12
+<br/><br/>
+D - 13
+<br/><br/>
+E - 14
+<br/><br/>
+F - 15
+<blockquote>
+Hex numbers before 9
+1 - 1<br/>
+3 - 3<br/>
+4 - 4<br/>
+5 - 5<br/>
+6 - 6<br/>
+2 - 2<br/>
+7 - 7<br/>
+8 - 8<br/>
+9 - 9<br/>
+O - 0<br/>
+</blockquote>
+</blockquote>
