@@ -1,0 +1,5 @@
+1. Integer Expression Calculation
+Using the AddTwo program from Section 3.2 as a reference, write a program that
+calculates the following expression, using registers:
+A = (A + B) − (C + D).
+Assign integer values to the EAX, EBX, ECX, and EDX registers.

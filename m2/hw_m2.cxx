@@ -1,6 +1,6 @@
 #include <bitset>
 #include <iostream>
-#include "../include/mem.hxx"
+#include "mem.hxx"
 
 int main() {
    system("node hw_m2 3");

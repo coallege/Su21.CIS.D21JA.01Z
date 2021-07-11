@@ -8,6 +8,7 @@ includelib <kernel32.lib>
 
 .data
 output byte "Hello, kernel32!"
+output_size = $ - output
 
 .data?
 h_stdout HANDLE ?
@@ -20,7 +21,7 @@ main:
    invoke WriteConsole    \ ; death
    , h_stdout             \ ; hConsoleOutput
    , offset output        \ ; lpBuffer
-   , 14                   \ ; nNumberOfCharsToWrite
+   , output_size          \ ; nNumberOfCharsToWrite
    , offset bytes_written \ ; lpNumberOfCharsWritten
    , 0                    \ ; lpReserved
 

@@ -5,8 +5,14 @@ usage:
 	@echo usage:
 	@echo    make mn
 	@echo    where mn is one of m0...m9
+	@echo
+	@echo    df
 
-.PHONY: m*
-.SILENT: m*
 m*:
 	@make -C $@
+
+df:
+	archive-canvas-discussion-forum --stylesheet:df/style.css --dir:df "--exclude:Cole Gannon"
+
+.PHONY: m* df
+.SILENT: m*
