@@ -8,6 +8,8 @@ This is probably gonna be a pretty cool class. The professor is just immensely
 chill. The only problem I see is maybe the "content questions". What if nobody
 has any questions to answer? What if I have no questions to ask?
 
+## modules
+
 `mn`      |start       |end
 ----------|:----------:|:----------:
 [`m1`](m1)|`2021.06.28`|`2021.07.04`
@@ -22,6 +24,11 @@ has any questions to answer? What if I have no questions to ask?
 [`m9`](m9)|`2021.07.27`|`2021.08.02`
 [`z1`](z1)|`2021.07.27`|`2021.08.06`
 
+## archived discussion forums
+
+[@coallege/Su21.CIS.D21JA.01Z/df](https://coallege.github.io/Su21.CIS.D21JA.01Z/df)
+
 ## resources
 
 - [Irvine32 Docs](http://csc.csudh.edu/mmccullough/asm/help/)
+- [x86 Instruction Reference](https://www.felixcloutier.com/x86/index.html)

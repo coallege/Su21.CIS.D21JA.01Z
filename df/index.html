@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="style.css">
+   <style>
+      #ul {
+         font-size: 20pt;
+      }
+      li {
+         margin-top: 18px;
+      }
+   </style>
+   <title>Discussion Forum Archives Index</title>
+</head>
+<body>
+   <center>
+      <h1>Discussion Forum Archives Index</h1>
+      <ul id="ul"></ul>
+   </center>
+   <script src="index.js"></script>
+   <script>
+      const ul = document.getElementById("ul");
+      window.df.forEach(df => {
+         const li = document.createElement("li");
+         const a  = document.createElement("a");
+         a.href = df;
+         a.innerText = df;
+         li.appendChild(a);
+         ul.appendChild(li);
+      });
+   </script>
+</body>
+</html>

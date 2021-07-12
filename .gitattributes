@@ -1,0 +1,2 @@
+/df/*.html -linguist-detectable linguist-vendored
+/df/*.json -linguist-detectable linguist-vendored
