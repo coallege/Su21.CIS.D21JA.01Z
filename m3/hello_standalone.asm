@@ -1,6 +1,6 @@
 .386
 .model flat, stdcall
-option casemap: none ; because of case sensitivty, suffer
+option casemap: none ; because of case sensitivity, suffer
 
 include <windows.inc>
 include <kernel32.inc>

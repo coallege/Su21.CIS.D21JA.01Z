@@ -13,4 +13,4 @@ includelib <User32.Lib>
       call WriteString
       exit
    main endp
-end
+end main
