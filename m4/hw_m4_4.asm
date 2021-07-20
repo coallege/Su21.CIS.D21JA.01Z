@@ -7,13 +7,13 @@ includelib <Irvine32.lib>
 includelib <Kernel32.lib>
 includelib <User32.lib>
 
-what_is_cat_name textequ <"What is your cat's name?">
+cat_name? textequ <"What is your cat's name?">
 say_hello        textequ <"Say hello to ">
 for_me           textequ <" for me!!"> ; cursed !! produces 1 exclamation point
 lf = 10
 
 .data
-   prompt  byte what_is_cat_name, lf, "> ", 0
+   prompt  byte cat_name?, lf, "> ", 0
    output0 byte say_hello, 0
    output1 byte for_me, lf, 0
 

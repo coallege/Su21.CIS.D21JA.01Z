@@ -1,0 +1,64 @@
+Problem 1)
+A very simple but not effective solution
+.data
+	Var1 DWORD  78563412h
+	Var2 DWORD ?
+
+.code
+	MOV al, byte ptr Var1
+	MOV byte ptr (Var2+3), al
+	MOV al, byte ptr (var1+1)
+	MOV byte ptr (Var1+2), al
+	MOV al, byte ptr (Var1+2)
+	MOV byte ptr (Var2+1), al
+	MOV al, byte ptr (var1 +3)
+	MOV byte ptr Var2, al
+
+--------------------------------
+Problem 2)
+.data
+	count =40; some selective number
+	name BYTE "De Anza",0
+	reverseName BYTE count DUP(?)
+
+.code
+	MOV eax, lengthof name -2 ; remember there is a 0 at the end
+	MOV ebx, 0
+	MOV ecx, lengthof name -1
+
+L1:
+	MOV dl, byte ptr name[eax]
+	MOV byte ptr reverseName[ebx], dl
+	DEC eax
+	INC ebx
+	LOOP L1
+	MOV byte ptr (reserseName +lengthof name -1),0
+
+----------------------------------
+problem 3)
+.data
+
+	array1 DWORD 1,2,3,4,5,6,7,8,9,10
+
+.code
+
+	mov ecx, lengthof array1 /2
+
+	mov eax, 0
+L1:
+	mov ebx , dword ptr array1[eax]
+	add eax, type array1
+	xchg dword ptr array1[eax], ebx
+	sub eax, type array1
+	mov dword ptr array1[eax], ebx
+	add eax, 2* type array1
+	Loop L1
+
+----------------------------------------
+
+problem 4)
+
+mov edx, var4       ;  edx = 1h
+movzx edx, var2     ;  edx = 00001000h
+mov edx, [var4+4]   ;  edx = 2h
+movsx edx,var1      ;  since -4 =fch then edx = fffffffch

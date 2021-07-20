@@ -13,6 +13,7 @@ m*:
 
 df:
 	archive-canvas-discussion-forum --stylesheet:df/style.css --dir:df "--exclude:Cole Gannon"
+	node df/genIndex
 
 .PHONY: m* df
 .SILENT: m*

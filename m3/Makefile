@@ -1,5 +1,3 @@
-self := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
-
 masm_path   := P:/lib/masm32
 irvine_path := P:/lib/irvine
 

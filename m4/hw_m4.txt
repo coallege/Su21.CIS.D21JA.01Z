@@ -1,10 +1,5 @@
 1. Integer Expression Calculation
 
-include <Irvine32.inc>
-includelib <Irvine32.lib>
-includelib <Kernel32.lib>
-includelib <User32.lib>
-
 .code
 main:
    xor esi, esi
@@ -19,17 +14,7 @@ main:
    add ecx, edx ; C = (C + D)
    sub eax, ecx ; A = A - C
 
-   call DumpRegs
-   invoke ExitProcess, 0
-end main
-
 2. Symbolic Integer Constants
-; This is more than was asked for but I am just enjoying this too much :)
-
-include <Irvine32.inc>
-includelib <Irvine32.lib>
-includelib <Kernel32.lib>
-includelib <User32.lib>
 
 monday    = 1
 tuesday   = 2
@@ -42,49 +27,7 @@ sunday    = 7
 .data
    days_of_week  byte monday, tuesday, wednesday, thursday, friday, saturday, sunday
 
-   monday_s    byte "monday", 0
-   tuesday_s   byte "tuesday", 0
-   wednesday_s byte "wednesday", 0
-   thursday_s  byte "thursday", 0
-   friday_s    byte "friday", 0
-   saturday_s  byte "saturday", 0
-   sunday_s    byte "sunday", 0
-
-   names_of_week dword    \
-      offset monday_s,    \
-      offset tuesday_s,   \
-      offset wednesday_s, \
-      offset thursday_s,  \
-      offset friday_s,    \
-      offset saturday_s,  \
-      offset sunday_s
-
-.code
-main:
-   mov ecx, 0
-   my_loop:
-      xor eax,eax
-      mov al, [days_of_week + ecx]
-      call WriteInt
-      mov al, ' '
-      call WriteChar
-      mov edx, [names_of_week + ecx * 4]
-      call WriteString
-      mov al, 10
-      call WriteChar
-      inc ecx
-      cmp ecx, 7
-   jl my_loop
-
-   invoke ExitProcess, 0
-end main
-
 3. Data Definitions
-
-include <Irvine32.inc>
-includelib <Irvine32.lib>
-includelib <Kernel32.lib>
-includelib <User32.lib>
 
 .data
    _byte   byte    +99
@@ -101,49 +44,14 @@ includelib <User32.lib>
    _real8  real8   +3.2E-260
    _real10 real10  +1.1E+12
 
-.code
-main:
-   invoke ExitProcess, 0
-end main
-
 4. Symbolic Text Constants
-
-include <Irvine32.inc>
-includelib <Irvine32.lib>
-includelib <Kernel32.lib>
-includelib <User32.lib>
 
 what_is_cat_name textequ <"What is your cat's name?">
 say_hello        textequ <"Say hello to ">
-for_me           textequ <" for me!!"> ; cursed !! produces 1 exclamation point
+for_me           textequ <" for me!!">
 lf = 10
 
 .data
    prompt  byte what_is_cat_name, lf, "> ", 0
    output0 byte say_hello, 0
    output1 byte for_me, lf, 0
-
-.data?
-   catname_maxlen = 63
-   catname byte catname_maxlen + 1 dup(?)
-
-.code
-main:
-   mov edx, offset prompt
-   call WriteString
-
-   mov ecx, catname_maxlen
-   mov edx, offset catname
-   call ReadString
-
-   mov edx, offset output0
-   call WriteString
-
-   mov edx, offset catname
-   call WriteString
-
-   mov edx, offset output1
-   call WriteString
-
-   invoke ExitProcess, 0
-end main

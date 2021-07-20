@@ -1,0 +1,103 @@
+# 4.9.2.13.
+
+a 00000001
+b 00000004
+c 00000004
+d 00000002
+e 00000004
+f 00000008
+g 00000005
+
+# 4.10.1.
+
+.data
+   bigEndian byte 12h, 34h, 56h, 78h
+.data?
+   littleEndian dword ?
+.code
+main:
+   mov ecx, lengthof bigEndian  ; bigEndian position
+   mov edx, offset littleEndian ; little endian position
+top:
+   mov al, byte ptr [bigEndian + ecx - 1]
+   mov byte ptr [edx], al
+   inc edx
+   loop top
+
+   mov eax, [littleEndian]
+   call WriteHex
+   exit
+
+# 4.10.2.
+
+.data
+   array byte 0, 1, 2, 3, 4, 5
+
+.code
+main:
+   xor esi, esi
+top:
+   mov eax, array[esi]
+   xchg eax, array[esi + 1]
+   mov array[esi], eax
+
+   add esi, 2
+   cmp esi, lengthof array
+   jl top
+
+# 4.10.3.
+
+main:
+   xor eax, eax
+   xor ebx, ebx
+
+top:
+   cmp ebx, lengthof array - 1
+   je done
+
+   add eax, dword ptr array[ebx * 4 + 4]
+   sub eax, dword ptr array[ebx * 4 + 0]
+
+   inc ebx
+   jmp top
+
+done:
+   call WriteInt
+   exit
+
+# 4.10.4.
+
+.data
+   word_ary word 0, 1, 2
+
+.data?
+   dword_ary dword 3 dup(?)
+
+.code
+main:
+   mov esi, lengthof word_ary
+top:
+   dec esi
+   mov ax, word ptr word_ary[esi * 2]
+   movzx dword_ary[esi * 4], ax
+   test esi, esi
+   jz top
+
+# 4.10.5.
+
+.code
+main:
+   xor esi, esi ; i = 0
+
+   xor eax, eax ; a = 0
+   mov ebx, 1   ; b = 1
+
+luup:
+   mov ecx, eax ; c = a
+   add ecx, ebx ; c += b
+   inc esi      ; i++
+   ; print out fib number esi
+   mov eax, ebx ; a = b
+   mov ebx, ecx ; b = c
+   cmp esi, 7
+   jl luup
