@@ -3,3 +3,5 @@
 *.exe
 *.ilk
 *.obj
+.vs/
+Debug/
