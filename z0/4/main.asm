@@ -14,7 +14,7 @@ main:
    ; use the debugger
    mov edx, var4
    nop ; a
-   movzx eax, [var2 + 6]
+   movzx edx, [var2 + 6]
    nop ; b
    mov edx, [var4 + 12]
    nop ; c
