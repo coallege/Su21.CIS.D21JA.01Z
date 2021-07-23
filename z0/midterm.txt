@@ -1,0 +1,78 @@
+Cole Gannon
+2021.07.22
+
+I have included set up moves that can easily be changed to verify that my
+programs work. Hopefully this is not inconvenient.
+
+1.
+.data?
+   buf byte 8 dup(?)
+
+.code
+main:
+   ; SET THESE TWO TO WHATEVER YOU WANT
+   mov eax, 12131415h
+   mov edx, 12345678h
+   ; BEGIN PROGRAM
+
+   mov dword ptr [buf + 0], edx
+   mov dword ptr [buf + 4], eax
+
+   mov ecx, 4 ; bottom counter
+   mov esi, 4 ; top counter
+L1:
+   mov bl, [buf + esi]
+   xchg bl, [buf + ecx - 1]
+   mov [buf + esi], bl
+   inc esi
+   loop L1
+
+   mov edx, dword ptr [buf + 0]
+   mov eax, dword ptr [buf + 4]
+
+2.
+.code
+main:
+   ; as a sample
+   ; to store 1234567898765432h, ebx will have msb and eax will have lsb
+   mov ebx, 12345678h ; msb
+   mov eax, 98765432h ; lsb
+
+   ; same with the edx,ecx pair
+   mov edx, 12345678h
+   mov ecx, 98765432h
+   ; BEGIN PROGRAM
+
+   ; first add lsb
+   ; we are going to store the result of the addition in the edx, ecx pair
+   add ecx, eax ; ecx += eax
+
+   lahf
+   and ah, 1 ; get the carry flag only
+   movzx eax, ah ; sign extend it to match operand sizes
+   add edx, esi ; add the carry flag
+
+   ; add the msb
+   add edx, ebx
+
+3.
+.data
+; example Array1, can be anything as long as it has a 19th index
+Array1 dword 12h, 13h, 14h, 15h, 16h, 17h, 18h, 19h, 1ah, 1bh, 1ch, 1dh, 1eh, 1fh, 1h, 1h, 1h, 1h, 1h, 1h
+; BEGIN PROGRAM
+addAmount = 12h
+elementsToAddTo dword 0, 3, 7, 11, 15, 19
+
+.code
+main:
+   mov ecx, lengthof elementsToAddTo
+L1:
+   mov eax, [elementsToAddTo + ecx * 4 - 4]
+   add Array1[eax * 4], addAmount
+   loop L1
+
+4.
+a = 0097F988h
+b = 00002F00h
+c = 0000000Ch
+d = FFFFFFECh

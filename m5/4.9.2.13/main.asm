@@ -8,7 +8,7 @@ includelib <User32.Lib>
    myWords  word 3 dup(?), 2000h
    myString byte "ABCDE"
    $answer_str byte ?, ": ", 0
-   
+
 .code
 answer proc which: byte, val: dword
    mov al, which
