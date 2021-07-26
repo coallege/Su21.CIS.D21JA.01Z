@@ -21,7 +21,7 @@ main:
    lahf
    and ah, 1 ; get the carry flag only
    movzx eax, ah ; sign extend it to match operand sizes
-   add edx, esi ; add the carry flag
+   add edx, eax ; add the carry flag
 
    ; add the msb
    add edx, ebx
