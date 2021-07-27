@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "archive-canvas-discussion-forum": "github:coarchive/archive-canvas-discussion-forum"
+  }
+}

@@ -5,3 +5,4 @@
 *.obj
 .vs/
 Debug/
+/node_modules/

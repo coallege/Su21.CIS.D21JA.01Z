@@ -11,6 +11,8 @@ usage:
 m*:
 	@make -C $@
 
+PATH := $(PATH);node_modules/.bin
+
 df:
 	archive-canvas-discussion-forum --stylesheet:df/style.css --dir:df "--exclude:Cole Gannon"
 	node df/genIndex

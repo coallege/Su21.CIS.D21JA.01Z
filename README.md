@@ -32,3 +32,4 @@ has any questions to answer? What if I have no questions to ask?
 
 - [Irvine32 Docs](http://csc.csudh.edu/mmccullough/asm/help/)
 - [x86 Instruction Reference](https://www.felixcloutier.com/x86/index.html)
+- [Assembly Language Programming Playlist](https://www.youtube.com/playlist?list=PLPedo-T7QiNsIji329HyTzbKBuCAHwNFC)
