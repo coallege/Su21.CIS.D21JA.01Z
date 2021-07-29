@@ -1,0 +1,146 @@
+6.10.5.
+   03afbf64dh
+
+6.10.7.
+   a. 00101101b
+   b. 01001000b
+   c. 01101111b
+   d. 10100011b
+
+6.10.8.
+   a. 85h
+   b. 34h
+   c. 0BFh
+   d. 0AEh
+
+6.10.9.
+   a. CF=0  ZF=0  SF=0
+   b. CF=0  ZF=0  SF=0
+   c. CF=1  ZF=0  SF=1
+
+6.10.12.
+   The final value of edx is 1.
+
+6.10.14.
+   The final value of edx is 0.
+
+6.10.16.
+   True
+
+6.10.19.
+   8080808h
+
+6.11.2.1.
+   .data
+      ary1 dword 7 dup(?)
+      ary2 dword 9 dup(?)
+
+   .code
+   RandomArrayFill proc ary: dword, sz: dword, j: dword, k: dword
+      pushad
+      call Randomize
+      mov edx, ary
+      mov esi, sz ; index
+      sub ecx, j
+      mov ecx, k
+   L1:
+      dec esi
+      mov eax, ecx
+      call RandomRange
+      add eax, j
+      mov [edx + esi * 4], eax
+      test esi, esi
+      jnz L1
+      popad
+      ret
+   RandomArrayFill endp
+   main:
+      invoke RandomArrayFill, offset ary1, lengthof ary1, 50, 90
+      invoke RandomArrayFill, offset ary2, lengthof ary2, 1, 4
+      invoke ExitProcess, 0
+   end main
+
+6.11.2.2.
+   .code
+      SumArray proc ary: dword, j: dword, k: dword
+         pushad
+         xor eax, eax
+         mov ebx, ary
+         mov ecx, j
+         mov edx, k
+         cmp ecx, edx
+      top:
+         je done
+         add eax, ebx[ecx]
+         inc ecx
+         jmp top
+      done:
+         popad
+         ret
+      SumArray endp
+
+6.11.2.4.
+   TRUE = 1
+   FALSE = 0
+
+   .data
+      gradeAverage  WORD ?
+      credits       WORD ?
+      OkToRegister  BYTE ?
+
+      promptGradeAv byte "What is your Grade Average: ", 0
+      promptCredits byte "How many credits do you have: ", 0
+      creditsTooHi  byte "Credits must be in between 1 and 30", 0
+      canRegister   byte "The student can register!", 10, 0
+      cantRegister  byte "The student cannot register", 10, 0
+
+.code
+   main:
+      mov edx, offset promptGradeAv
+      call WriteString
+      call ReadInt
+      mov gradeAverage, ax
+
+      mov edx, offset promptCredits
+      call WriteString
+      call ReadInt
+      cmp credits, 30
+      jg $creditsTooHigh
+      cmp credits, 0
+      jl $creditsTooHigh
+      mov credits, ax
+      jmp $next
+   $creditsTooHigh:
+      mov edx, offset creditsTooHi
+      call WriteString
+      invoke ExitProcess, 0
+
+   $next:
+      mov  byte ptr OkToRegister,FALSE
+      cmp  word ptr gradeAverage,350
+      jbe  L0
+      mov  byte ptr OkToRegister,TRUE
+      jmp  L2
+   L0:
+      cmp  word ptr gradeAverage,250
+      jbe  L1
+      cmp  word ptr credits,16
+      ja   L1
+      mov  byte ptr OkToRegister,TRUE
+      jmp  L2
+   L1:
+      cmp  word ptr credits,12
+      ja   L2
+      mov  byte ptr OkToRegister,TRUE
+   L2:
+      mov al, OkToRegister
+      cmp al, al
+      jz $else
+         mov edx, offset canRegister
+         jmp $fi
+      $else:
+         mov edx, offset cantRegister
+      $fi:
+      call WriteString
+      invoke ExitProcess, 0
+   end main
