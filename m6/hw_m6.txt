@@ -1,0 +1,132 @@
+5.8.1.15.
+   eax will be 5
+
+5.8.1.16.
+   d. The program will halt with a runtime error on Line 11
+
+5.8.1.17.
+   c. EAX will equal 30 on line 6
+
+5.8.1.18.
+   a. EAX will equal 30 on line 7
+
+5.8.1.19.
+   a. EDX will equal 40 on line 6
+
+5.8.1.20.
+   The values in the array are {0ah, 014h, 01eh, 028h} or {10, 20, 30, 40}
+
+5.9.1.
+   .data
+      s byte "the same string", 10, 0
+
+   .code
+      main:
+         mov edx, offset s
+
+         mov eax, cyan
+         call SetTextColor
+         call WriteString
+
+         mov eax, white
+         call SetTextColor
+         call WriteString
+
+         xor eax, eax
+         ret
+
+5.9.2.
+   .data
+      start = 1
+      chars byte "H", "A", "C", "E", "B", "D", "F", "G"
+      links dword 0, 4, 5, 6, 2, 3, 7, 0
+      output byte lengthof chars dup(?)
+   .code
+      main:
+         xor eax, eax   ; output index  (i)
+         xor esi, esi   ; last index    (s)
+         mov edi, start ; current index (d)
+      l1:
+         cmp esi, edi
+         je done
+         ; output[i] = chars[d]
+         ; i++
+         ; esi = edi
+         ; edi = links[edi]
+         mov cl, chars[edi]
+         mov output[eax], cl
+         inc eax
+         mov esi, edi
+         mov edi, links[edi * 4]
+         jmp l1
+      done:
+         xor eax, eax
+         ret
+5.9.4.
+   .data
+      sPrompt byte "Enter an integer:", 0
+      promptIntA dword ?
+      promptIntB dword ?
+      sResult byte "Sum is ", 0
+
+   .code
+      CenterScreen:
+         call GetMaxXY
+         sar dl, 1
+         sar dh, 1
+         call Gotoxy
+         ret
+      prompt:
+         call Clrscr
+         call CenterScreen
+         mov edx, offset sPrompt
+         call WriteString
+         call ReadInt
+         mov promptIntA, eax
+
+         mov edx, offset sPrompt
+         call WriteString
+         call ReadInt
+
+         add eax, promptIntA
+         mov edx, offset sResult
+         call WriteString
+         call WriteInt
+         ret
+      main:
+         mov ecx, 3
+         l1:
+         call prompt
+         loop l1
+         xor eax, eax
+         ret
+5.9.5.
+   .code
+      BetterRandomRange:
+         sub eax, ebx
+         call Randomize
+         call RandomRange
+         add eax, ebx
+         ret
+
+5.9.7
+   .code
+      main:
+         call GetMaxXY
+         mov dh, 30 ; MaxXY y doesn't work
+
+         movzx eax, dl
+         call RandomRange
+         mov dl, al
+
+         movzx eax, dh
+         call RandomRange
+         mov dh, al
+
+         call Gotoxy
+         mov al, '0'
+         call WriteChar
+
+         mov eax, 100
+         call Delay
+         jmp main
