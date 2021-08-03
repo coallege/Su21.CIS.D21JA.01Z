@@ -1,0 +1,142 @@
+7.9.1.1.
+   a. 6Ah
+   b. 0EAh
+   c. 0FDh
+   d. 0A9h
+
+7.9.1.3.
+   AX = 2200h
+   DX = 0002h
+
+7.9.1.5.
+   EAX = 00012340h
+   EDX = 00000000h
+
+7.9.1.8.
+   Integer Overflow Error.
+
+7.9.1.9.
+   .386
+   .model flat, stdcall
+
+   .data
+      val1   QWORD 20403004362047A1h
+      val2   QWORD 055210304A2630B2h
+
+   .code
+   main:
+      mov  ecx,8                 ; loop counter
+      mov  esi,offset val1       ; set index to start
+      mov  edi,offset val2
+      clc                        ; clear Carry flag
+   top:
+      mov  al,BYTE PTR[esi]      ; get first number
+      sbb  al,BYTE PTR[edi]      ; subtract second
+      mov  BYTE PTR[esi],al      ; store the result in val1
+      inc  esi
+      inc  edi
+      loop top
+
+      nop
+      xor eax, eax
+      ret
+   end main
+
+7.10.1.
+   DECIMAL_OFFSET = 5
+   .data
+      decimal_one BYTE "100123456789765"
+
+   .code
+      WriteScaled proc
+         mov esi, offset decimal_one
+
+         mov ecx, lengthof decimal_one
+         sub ecx, DECIMAL_OFFSET
+      whole:
+         mov al, byte ptr [esi]
+         inc esi
+         call WriteChar
+         loop whole
+
+         mov al, '.'
+         call WriteChar
+         mov ecx, DECIMAL_OFFSET
+      decimal:
+         mov al, byte ptr [esi]
+         inc esi
+         call WriteChar
+         loop decimal
+
+         ret
+      WriteScaled endp
+
+7.10.2.
+   ; dword *a, dword *b, dword *result, dword numberOfDwords <top of stack here>
+   ; computes a - b and stores the result in result
+   Extended_Sub proc
+      pop edi ; return pointer
+      pop ecx
+      pop esi
+      pop ebx
+      pop eax
+      push edi ; put it back
+      clc
+   l1:
+      dec ecx
+      mov edx, [eax + ecx * 4]
+      mov [esi + ecx * 4], edx ; result[ecx] = a[ecx]
+      mov edx, [ebx + ecx * 4]
+      sbb [esi + ecx * 4], edx ; result[ecx] -= b[ecx]
+
+      test ecx, ecx
+      jnz l1
+      ret
+   Extended_Sub endp
+
+7.10.4.
+   .data
+      key byte -2, 4, 1, 0, -3, 5, 2, -4, -4, 6
+      test1 byte "I like pancakes!"
+      test2 byte "My secret: suffering."
+
+   .code
+      ; char *str in eax
+      ; char *end in ebx
+      Encrypt proc
+         xor esi, esi ; key index
+      top:
+         mov dl, [key + esi]
+         cmp dl, 0
+         jl negative
+      positive:
+         add [eax], dl
+         jmp inc_idx
+      negative:
+         neg dl
+         sub [eax], dl
+      inc_idx:
+         inc eax
+         inc esi
+         cmp esi, lengthof key
+         jne see_if_done
+         xor esi, esi
+      see_if_done:
+         cmp eax, ebx
+         jne top
+         ret
+      Encrypt endp
+   main:
+      mov eax, offset test1
+      mov ebx, offset test1
+      add ebx, lengthof test1
+      call Encrypt
+
+      mov eax, offset test2
+      mov ebx, offset test2
+      add ebx, lengthof test2
+      call Encrypt
+
+      xor eax, eax
+      ret
+   end main
