@@ -17,8 +17,8 @@ Part 1.
       Q: The JBE instruction is used when comparing unsigned integers.
       A: True.
    6.
-      Q: The OR instruction can be used to find the intersection of two bit-mapped
-         sets.
+      Q: The OR instruction can be used to find the intersection of two
+         bit-mapped sets.
       A: False. 0b01 | 0b10 -> 0b11. Instead of OR, use AND.
    7.
       Q: With unsigned operands, the CMP instruction sets the Carry flag when
@@ -140,6 +140,8 @@ Part 2.
             ret
          FindLargest endp
    4.
+      edx = 1
+   5.
       a. 9ah
       b. 6ah
       c. 0a9h
