@@ -1,0 +1,391 @@
+{
+   "topic": {
+      "title": "Discussion: HW-M9",
+      "time": null,
+      "msg": "<p><span>Post questions about HW-M9.&nbsp;Use the first line of your post as the subject of the post.</span></p>\n<p><span>Assignments: Section 8.11 probs 1,2,4 5, 6, 7</span></p>"
+   },
+   "replies": [
+      {
+         "entry": {
+            "title": "married llama",
+            "time": "2021-07-30T01:10:39.000Z",
+            "msg": "<p>Clarify problem 6. Exchanging Integers</p>\n<p>It says to swap consecutive pairs of integers but I'm wondering if we iterate through elements by one or two.</p>\n<p>INPUT: 1, 2, 3, 4</p>\n<p>SWAP ELEMENTS: 2,3,4,1 - next pair is at current index + 1</p>\n<p>SWAP AS PAIRS: 2,1,4,3 - next pair is at current index + 2</p>\n<p>It's only a minor difference and neither is harder than the other but what is the requirement?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "supposed squirrel",
+                  "time": "2021-07-31T03:37:29.000Z",
+                  "msg": "<p>I'd probably say two, at least that makes more sense to me.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "unsightly toad",
+                  "time": "2021-07-31T17:38:08.000Z",
+                  "msg": "<p>Ya I also thought it was 2.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "striking snipe",
+                  "time": "2021-08-01T20:17:25.000Z",
+                  "msg": "<p>8.4.6 example referred in #6 using DWORD. If you are using DWORD as well, then I think it should be currentIndex + 4</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "encouraging dragon",
+                  "time": "2021-08-01T23:22:20.000Z",
+                  "msg": "<p>Agree with others above, I think you had the right idea in mind with the current index +2 but like Naresh mentioned be wary of the type of element. It is probably safe to get used to doing TYPE var1 * 2 or smtg similiar.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "constitutional cattle",
+                  "time": "2021-08-02T00:03:58.000Z",
+                  "msg": "<p>Definitely iterating them through two would be easier as you'd only need to deal with consecutive pairs so iterating by 1 would probably be counterintuitive.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "near mastodon",
+                  "time": "2021-08-02T04:39:26.000Z",
+                  "msg": "<p>2 will be much easier and I believe that 2 was the intended incrementation. Double-check with the professor tho.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "clean bovid",
+                  "time": "2021-08-02T05:21:10.000Z",
+                  "msg": "<p>I think 2 too.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "inland hummingbird",
+                  "time": "2021-08-02T05:29:33.000Z",
+                  "msg": "<p>I also think 2</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "electric dolphin",
+                  "time": "2021-08-02T05:45:31.000Z",
+                  "msg": "<p>Same. I also think 2.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "pleased orca",
+                  "time": "2021-08-02T05:49:41.000Z",
+                  "msg": "<p>Pretty sure you're supposed to iterate by two.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "broad bird",
+                  "time": "2021-08-02T05:54:45.000Z",
+                  "msg": "<p>Yes, I also think 2 as well.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "alert ant",
+                  "time": "2021-08-02T06:12:03.000Z",
+                  "msg": "<p>My answer is 2</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "foolish fowl",
+            "time": "2021-07-31T08:14:28.000Z",
+            "msg": "<p><strong>FindThrees Loops</strong></p>\n<p>Are we allowed to use IF ELSE and ENDIF statements when jumping around the code and comparing the values?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "ethnic earthworm",
+                  "time": "2021-08-01T02:52:42.000Z",
+                  "msg": "<p>I believe we can because we used these statements in chapter 6&nbsp;</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "ripe python",
+                  "time": "2021-08-01T04:15:55.000Z",
+                  "msg": "<p>Yes, I think we are allowed to use IF ELSE and ENDIF statements.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "hollow haddock",
+                  "time": "2021-08-01T05:14:46.000Z",
+                  "msg": "<p>I'm not sure, but I think I heard him say we couldn't use IF ELSE and ENDIF statements in one of the lectures.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "hurt harrier",
+                  "time": "2021-08-01T10:30:42.000Z",
+                  "msg": "<p>I dont remember him specifying we couldnt</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "regulatory pony",
+                  "time": "2021-08-01T21:43:14.000Z",
+                  "msg": "<p>I believe we can in the HW</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "useful trout",
+                  "time": "2021-08-01T21:59:30.000Z",
+                  "msg": "<p>I think it can</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "unfair tick",
+                  "time": "2021-08-01T23:06:55.000Z",
+                  "msg": "<p>We covered it already so we can probably use it.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "itchy junglefowl",
+                  "time": "2021-08-01T23:08:18.000Z",
+                  "msg": "<p>Yes. We can use material once it has been covered in class.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "encouraging dragon",
+                  "time": "2021-08-01T23:23:49.000Z",
+                  "msg": "<div class=\"discussion-section message_wrapper hide-if-collapsed\">\n<div class=\"message user_content enhanced\" data-bind=\"message\">\n<p>In class he said to not use if, elseif, and endif statements as they are not really assembly but higher level code that is translated to assembly by MASM.</p>\n</div>\n</div>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "cognitive buzzard",
+                  "time": "2021-08-02T01:33:39.000Z",
+                  "msg": "<p>It may be fine with the homework, but I wouldn't be comfortable with using them. As Yash said, the professor wants us to use pure assembly on the exams.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "continuing centipede",
+                  "time": "2021-08-02T02:02:45.000Z",
+                  "msg": "Yes I think we can"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "federal firefly",
+                  "time": "2021-08-02T02:32:40.000Z",
+                  "msg": "In the exams we aren't allowed to use these directives because they're from MASM, not assembly. I think the same would apply for the homework, because using .IF and similar would hinder our learning of conditional jumping."
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "evolutionary earwig",
+                  "time": "2021-08-02T03:29:15.000Z",
+                  "msg": "<p>I think we can use it in the homework.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "adverse anaconda",
+                  "time": "2021-08-02T03:32:16.000Z",
+                  "msg": "<p>I think we can use them to quickly build our procedures. If everything looks fine, change them to conditional jump statements.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "broad bird",
+                  "time": "2021-08-02T05:55:00.000Z",
+                  "msg": "<p>Im pretty sure we can use in the homework.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "dry cuckoo",
+            "time": "2021-08-01T00:50:05.000Z",
+            "msg": "<p>Very basic question:</p>\n<p>PUSH ebx -&gt; save register values</p>\n<p>POP ebx -&gt; restore register values</p>\n<p>One of the homework assignments requires (Preserve all registers (except EAX) that are modified by the procedure).</p>\n<p>Preserve in this context means PUSH? The more I read it the more I think it is POP. Confused.</p>\n<p>Your understanding? Thanks!</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "thoughtless swordtail",
+                  "time": "2021-08-01T08:01:57.000Z",
+                  "msg": "<p>When they say preserve registers, they mean to push the registers you will modify at the beginning of the procedure (after you have created your stack frame) and pop the registers you modify at the end of the procedure (before you leave the stack frame). You can also use the USES keyword to preserve the registers which will do the same thing as I mentioned, however, I doubt we will be able to use it in the final exam. Also, the homework asks you to use MASM parameters and I think pushing and popping registers manually doesn't play well with the MASM parameters and you should use USES.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "forward frog",
+                  "time": "2021-08-01T19:36:32.000Z",
+                  "msg": "<p>To clarify the usage of push and pop in a procedure.</p>\n<p>mov eax, 10</p>\n<p>Test1 PROC</p>\n<p>Push eax ; saves the value of eax =10&nbsp; when modified.</p>\n<p>add eax, 10</p>\n<p>mov ecx, eax ; eax is added to loop counter</p>\n<p>pop eax ; eax is now 10 since new eax is poped and not used.</p>\n<p>In this case eax is preserved its value outside of the PROC</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "dry cuckoo",
+                  "time": "2021-08-01T21:17:05.000Z",
+                  "msg": "<p>Thanks, Ronak and Steven! Your responses confirmed my further reading and understanding through going through the homework. Much appreciated!</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "similar salamander",
+            "time": "2021-08-01T01:23:02.000Z",
+            "msg": "<p>Are there any restricted directives or shortcuts we aren't allowed to use in the homework?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "forward frog",
+                  "time": "2021-08-01T19:17:38.000Z",
+                  "msg": "<p>Anything that isnt taught in the lectures or textbook. Feel free to use any tools that are helpful to you, but remember to check if a question clarifies suing a specific library or instruction.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "total takin",
+                  "time": "2021-08-02T04:57:14.000Z",
+                  "msg": "<p>Protip: as enticing as it is, don't use rol!</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "robust quail",
+            "time": "2021-08-01T22:56:55.000Z",
+            "msg": "<p>Q2:</p>\n<p>How did you guys approach this probelm? This is the Chess Board question</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "Cole Gannon",
+                  "time": "2021-08-02T03:44:17.000Z",
+                  "msg": "<p>For each row, you keep some running state (either in a register or otherwise) of what the last color you wrote was. Then you toggle it for each tile. In between rows, you toggle the state once more to create the checkerboard effect.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "broken bird",
+                  "time": "2021-08-02T04:39:39.000Z",
+                  "msg": "<p>Thanks for the help, Cole! I was also unsure of how to approach this problem.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "broad bird",
+                  "time": "2021-08-02T05:55:23.000Z",
+                  "msg": "<p>Thanks for the help Cole, I was unsure of this problem as well.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "Deleted by encouraging dragon on Aug 1 at 4:23pm",
+            "time": null,
+            "msg": ""
+         },
+         "replies": []
+      },
+      {
+         "entry": {
+            "title": "grand gopher",
+            "time": "2021-08-01T23:26:44.000Z",
+            "msg": "<p>Does anyone have a good resource for the euclids algorithm, the textbook just says search on the web which is a bit broad, I might be overthinking it but this was the only HW question that might have been pretty hard.&nbsp;</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "evident earwig",
+                  "time": "2021-08-02T03:59:10.000Z",
+                  "msg": "<p>Euclid's algorithm basically states that if a&gt;b, then gcd(a,b) = gcd(a-b,b), so basically you need to do recursion, and if one of the numbers is 0, the other number is the gcd (return value).</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "early deer",
+                  "time": "2021-08-02T04:30:52.000Z",
+                  "msg": "<p>Hi Aaron,</p>\n<p><span style=\"font-size: 12pt;\">Khan Academy has a really nice explanation of t</span><span style=\"font-size: 12pt;\">he Euclidean Algorithm a</span><span style=\"font-size: 12pt;\">long with some examples.</span></p>\n<p><span style=\"font-size: 12pt;\">https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm</span></p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "spectacular silkworm",
+                  "time": "2021-08-02T06:53:02.000Z",
+                  "msg": "<p>Hey Aaron,</p>\n<p>This topic is very interesting. I have found something helpful <a class=\"inline_disabled external\" href=\"https://www.britannica.com/science/Euclidean-algorithm\" target=\"_blank\" rel=\"noreferrer noopener\"><span>https://www.britannica.com/science/Euclidean-algorithm</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a></p>\n<p>I hope this helps.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "gradual gopher",
+            "time": "2021-08-02T03:43:06.000Z",
+            "msg": "<p>Exchanging Integers<br>Create an array of randomly ordered integers. Using the Swap procedure from Section 8.4.6 as a<br>tool, write a loop that exchanges each consecutive pair of integers in the array.</p>"
+         },
+         "replies": []
+      },
+      {
+         "entry": {
+            "title": "conscious catfish",
+            "time": "2021-08-02T06:53:00.000Z",
+            "msg": "<p>Anyone have hints for number 2?</p>"
+         },
+         "replies": []
+      }
+   ]
+}

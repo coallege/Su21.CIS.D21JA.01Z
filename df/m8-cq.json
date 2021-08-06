@@ -1,0 +1,400 @@
+{
+   "topic": {
+      "title": "M8: Content Question (Integer arithmetic )",
+      "time": null,
+      "msg": "<p><span>Post questions about&nbsp;Integer Arithmetic.</span><span>&nbsp;Use the first line of your post as the subject of the post.</span></p>"
+   },
+   "replies": [
+      {
+         "entry": {
+            "title": "foolish fowl",
+            "time": "2021-07-30T17:46:38.000Z",
+            "msg": "<p><strong>Help with Practice!</strong></p>\n<p>What would be the hexadecimal values after the following code is executed?</p>\n<p><span class=\"textLayer--absolute\">mov dx, 0087h</span></p>\n<p><span class=\"textLayer--absolute\">mov ax, 6002h</span></p>\n<p><span class=\"textLayer--absolute\">mov bx,10h </span></p>\n<p><span class=\"textLayer--absolute\">div bx</span></p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "married llama",
+                  "time": "2021-07-30T19:53:03.000Z",
+                  "msg": "<p>The thing with this example is that it is purposefully made easy for you by the choice of divisor.</p>\n<p>Let's first look at this using decimal numbers.</p>\n<p>How would you calculate 876002 / 10?&nbsp; We all know that divide by ten simply moves the decimal point.&nbsp; The result is a quotient of 87600 and a remainder of 2.&nbsp; I'm sure you would agree that dividing by 100, 1000 and 10000 is also easy.</p>\n<p>Now look at how nice your example problem is.&nbsp; It divides a hex value by 10h which follows the same kind of rules as with decimal numbers.&nbsp; You simply shift the decimal point.&nbsp; So the 876002h / 10h equation results in a quotient of 87600h and a remainder of 2h.&nbsp; See how similar that is the decimal example above?&nbsp; Now hopefully you would agree that dividing by 100h, 1000h and 10000h is also easy.</p>"
+               },
+               "replies": [
+                  {
+                     "entry": {
+                        "title": "ethnic earthworm",
+                        "time": "2021-08-01T02:57:50.000Z",
+                        "msg": "<p>Thank you for the clear explaination</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "robust quail",
+                        "time": "2021-08-01T23:03:42.000Z",
+                        "msg": "<p>Thank you for the explanation. Is there a way to do this without converting to decimal, because it does get a bit tedious?</p>"
+                     },
+                     "replies": [
+                        {
+                           "entry": {
+                              "title": "cognitive buzzard",
+                              "time": "2021-08-02T01:53:47.000Z",
+                              "msg": "<p>You don't need to convert it to decimal. Moving the decimal point to the left implies dividing by one base. 10h is basically 16 in decimal form (which is one base in hex).</p>"
+                           },
+                           "replies": []
+                        }
+                     ]
+                  },
+                  {
+                     "entry": {
+                        "title": "constitutional cattle",
+                        "time": "2021-08-01T23:57:11.000Z",
+                        "msg": "<p>Nice explanation makes it very clear</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "continuing centipede",
+                        "time": "2021-08-02T02:03:53.000Z",
+                        "msg": "Thank you.&nbsp;"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "total takin",
+                        "time": "2021-08-02T04:57:39.000Z",
+                        "msg": "<p>Thank you for this explanation 🙏</p>\n<p>&nbsp;</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "pleased orca",
+                        "time": "2021-08-02T05:44:04.000Z",
+                        "msg": "<p>Thanks for this, super useful.</p>\n<p>&nbsp;</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "broad bird",
+                        "time": "2021-08-02T05:58:21.000Z",
+                        "msg": "<p>Thanks for the clear explanation, clear to understand.</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "useful trout",
+                        "time": "2021-08-02T06:01:01.000Z",
+                        "msg": "<p>Thank you for your explanation.</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "alert ant",
+                        "time": "2021-08-02T06:15:52.000Z",
+                        "msg": "<p>Thanks man!</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "conscious catfish",
+                        "time": "2021-08-02T06:55:19.000Z",
+                        "msg": "<p>Thank you for explaining!</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "spectacular silkworm",
+                        "time": "2021-08-02T06:56:18.000Z",
+                        "msg": "<p>Thanks for the explanation. I also found something interesting <a class=\"inline_disabled\" href=\"https://www.csie.ntu.edu.tw/~acpang/course/asm_2004/slides/chapt_07_PartIISolve.pdf\" target=\"_blank\">https://www.csie.ntu.edu.tw/~acpang/course/asm_2004/slides/chapt_07_PartIISolve.pdf</a></p>\n<p>I hope this helps.</p>"
+                     },
+                     "replies": []
+                  }
+               ]
+            },
+            {
+               "entry": {
+                  "title": "hollow haddock",
+                  "time": "2021-07-30T22:24:28.000Z",
+                  "msg": "<p>Following Nick, the division of 10h will leave you with 87600h with remainder 2, although this execution would you leave with a divide overflow error as the quotient will be too big to be placed into ax.</p>"
+               },
+               "replies": [
+                  {
+                     "entry": {
+                        "title": "thoughtless swordtail",
+                        "time": "2021-07-31T01:43:02.000Z",
+                        "msg": "<p>Is there any way to handle this error like the overflow flag for overflows in addition?</p>"
+                     },
+                     "replies": [
+                        {
+                           "entry": {
+                              "title": "supposed squirrel",
+                              "time": "2021-07-31T03:52:58.000Z",
+                              "msg": "<p>Here are some sources you can use for research:&nbsp;</p>\n<p><a href=\"https://stackoverflow.com/questions/40151998/correcting-overflow-situations-with-assembly-implementation\" target=\"_blank\" class=\"external\" rel=\"noreferrer noopener\"><span>https://stackoverflow.com/questions/40151998/correcting-overflow-situations-with-assembly-implementation</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a></p>\n<p><a href=\"https://stackoverflow.com/questions/19301498/carry-flag-auxiliary-flag-and-overflow-flag-in-assembly\" target=\"_blank\" class=\"external\" rel=\"noreferrer noopener\"><span>https://stackoverflow.com/questions/19301498/carry-flag-auxiliary-flag-and-overflow-flag-in-assembly</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a></p>\n<p><a href=\"http://www.c-jump.com/CIS77/ASM/Flags/F77_0110_overflow_flag.htm\" target=\"_blank\" class=\"external\" rel=\"noreferrer noopener\"><span>http://www.c-jump.com/CIS77/ASM/Flags/F77_0110_overflow_flag.htm</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a></p>\n<p>I believe you are correct. You will probably have to use overflow flag.&nbsp;</p>"
+                           },
+                           "replies": []
+                        },
+                        {
+                           "entry": {
+                              "title": "unsightly toad",
+                              "time": "2021-07-31T18:01:38.000Z",
+                              "msg": "<p>Here is another source that might be helpful.</p>\n<p>http://www.science.smith.edu/dftwiki/index.php/Understanding_The_X86_Flag_Bits</p>"
+                           },
+                           "replies": []
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "ripe python",
+            "time": "2021-07-31T22:24:26.000Z",
+            "msg": "<p><strong>SHL vs SAL</strong></p>\n<p>I wondering what is the differences between SHL and SAL?</p>\n<p>&nbsp;</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "hurt harrier",
+                  "time": "2021-07-31T23:16:23.000Z",
+                  "msg": "<p>SHL Shift left just shifts the bits to the left filling the empty spots with 0</p>\n<p>&nbsp;</p>\n<p>SAL Shift Arithmetic Left: Shifts the bits to the left and fills the empty spaces with the MSB</p>\n<p>eg.&nbsp;</p>\n<p>mov eax,0000FF80h; EAX = 0000 FF80h</p>\n<p>shl eax,16 ; EAX = FF80 0000h</p>\n<p>sar eax,16 ; EAX = FFFF FF80h</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "Deleted by regulatory pony on Aug 1 at 2:49pm",
+                  "time": null,
+                  "msg": ""
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "regulatory pony",
+                  "time": "2021-08-01T21:52:20.000Z",
+                  "msg": "<p>These could be helpful sources</p>\n<p><a href=\"https://www.youtube.com/watch?v=2se_G1DlW7g\" target=\"_blank\" class=\"external youtubed\" rel=\"noreferrer noopener\"><span>https://www.youtube.com/watch?v=2se_G1DlW7g</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a><a href=\"https://www.youtube.com/watch?v=2se_G1DlW7g\" class=\"youtubed\">\n        <img src=\"/images/play_overlay.png\" class=\"media_comment_thumbnail\" style=\"background-image: url(//img.youtube.com/vi/2se_G1DlW7g/2.jpg)\" alt=\"\">\n      </a></p>\n<p><a href=\"https://www.youtube.com/watch?v=cmMu5r7dMeU\" target=\"_blank\" class=\"external youtubed\" rel=\"noreferrer noopener\"><span>https://www.youtube.com/watch?v=cmMu5r7dMeU</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a><a href=\"https://www.youtube.com/watch?v=cmMu5r7dMeU\" class=\"youtubed\">\n        <img src=\"/images/play_overlay.png\" class=\"media_comment_thumbnail\" style=\"background-image: url(//img.youtube.com/vi/cmMu5r7dMeU/2.jpg)\" alt=\"\">\n      </a></p>\n<p>&nbsp;</p>"
+               },
+               "replies": [
+                  {
+                     "entry": {
+                        "title": "unfair tick",
+                        "time": "2021-08-01T23:04:28.000Z",
+                        "msg": "<p>Thanks for the videos phaniteja, they definitely helped me understand better!</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "inland hummingbird",
+                        "time": "2021-08-02T05:15:25.000Z",
+                        "msg": "<p>These videos were really helpful, thanks for sharing!</p>"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "clean bovid",
+                        "time": "2021-08-02T05:16:13.000Z",
+                        "msg": "<p>This is very helpful. Thank you.</p>"
+                     },
+                     "replies": []
+                  }
+               ]
+            },
+            {
+               "entry": {
+                  "title": "itchy junglefowl",
+                  "time": "2021-08-01T23:11:39.000Z",
+                  "msg": "<p>I attached a good reference:</p>\n<p>https://stackoverflow.com/questions/8373415/difference-between-shl-and-sal-in-80x86</p>"
+               },
+               "replies": [
+                  {
+                     "entry": {
+                        "title": "broken bird",
+                        "time": "2021-08-02T04:36:56.000Z",
+                        "msg": "<p>Thanks, Summer! This is really helpful.</p>"
+                     },
+                     "replies": []
+                  }
+               ]
+            },
+            {
+               "entry": {
+                  "title": "encouraging dragon",
+                  "time": "2021-08-01T23:12:49.000Z",
+                  "msg": "<p>SAL and SHL are the same and do not use the MSB but SHR and SAR are different as SAR uses the MSB instead of 0.</p>"
+               },
+               "replies": [
+                  {
+                     "entry": {
+                        "title": "electric dolphin",
+                        "time": "2021-08-02T02:03:35.000Z",
+                        "msg": "<p>Thanks for your response, Yash. So does that mean we can use SAL and SHL interchangeably?</p>"
+                     },
+                     "replies": []
+                  }
+               ]
+            },
+            {
+               "entry": {
+                  "title": "adverse anaconda",
+                  "time": "2021-08-02T03:12:04.000Z",
+                  "msg": "<p>They are essentially the same. But we may need to pay attention to the difference between SHR and SAR.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "evolutionary earwig",
+                  "time": "2021-08-02T03:25:59.000Z",
+                  "msg": "<p>Hi!</p>\n<p>Here is a good resource that may help you: <a href=\"https://stackoverflow.com/questions/8373415/difference-between-shl-and-sal-in-80x86\" target=\"_blank\" class=\"external\" rel=\"noreferrer noopener\"><span>https://stackoverflow.com/questions/8373415/difference-between-shl-and-sal-in-80x86</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a>&nbsp;</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "hurt harrier",
+            "time": "2021-07-31T23:12:19.000Z",
+            "msg": "<p>.data<br>ArraySize = 3<br>array BYTE ArraySize DUP(99h) ; 1001 pattern in each nybble<br>.code<br>main PROC<br>mov esi,0<br>shr array[esi+2],1 ; high byte<br>rcr array[esi+1],1 ; middle byte, include Carry flag<br>rcr array[esi],1 ; low byte, include Carry flag</p>\n<p>&nbsp;</p>\n<p>The book says this code shifts all bytes 1 bit to the right, but why does the shifting start with [esi+2] instead of esi</p>\n<p>&nbsp;</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "dry cuckoo",
+                  "time": "2021-08-01T00:27:07.000Z",
+                  "msg": "<p><span>Hello Brandon,</span></p>\n<p><span>Here is my understanding:</span></p>\n<p><span>mov esi,0 -&gt; set the esi register as pointer - offset to 0&nbsp;</span><br><span>shr array[esi+2],1 ; high byte -&gt; offset moves by two -&gt; points to the 3rd element in the array</span><br><span>rcr array[esi+1],1 ; middle byte, include Carry flag&nbsp; -&gt;&nbsp; offset moves by one 1 -&gt; points to the 2nd element in the array</span><br><span>rcr array[esi],1 ; low byte, include Carry flag -&gt; now process the first element in the array.&nbsp;</span></p>\n<p>The array is of BYTE type - the offset increments by 1 to point to the address of the element in the array.&nbsp;</p>\n<p>Hope this helps.&nbsp;</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "early deer",
+                  "time": "2021-08-02T02:31:15.000Z",
+                  "msg": "<p>Hi Brandon,</p>\n<p>I believe that you need to start with [esi+2] instead of esi since we are working with little Endian byte order. So we need to use [esi+2] to start with the highest byte and then start shifting bits to the right along with the carry flag.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "similar salamander",
+            "time": "2021-08-01T01:26:21.000Z",
+            "msg": "<p>Does anyone have a list of all the restricted directives or shortcuts we aren't supposed to use for all the chapters leading up to this one? I'm talking like .IF and .ELSE, stuff like that that are a part of assembly, but we aren't supposed to use?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "electric dolphin",
+                  "time": "2021-08-02T02:01:45.000Z",
+                  "msg": "<p>Hi, Sean. I remember from last Monday's lecture that we aren't supposed to use the directives mentioned in section 6.7 of the textbook and that we aren't covering FSMs either. I can't think of anything else that is restricted but there's a chance that I'm missing something. Thank you.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "near mastodon",
+                  "time": "2021-08-02T04:33:23.000Z",
+                  "msg": "<p>Yeah if you rewatch the lecture, towards the end he crosses out the ones we do not have to know about.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "evident earwig",
+            "time": "2021-08-01T07:37:21.000Z",
+            "msg": "<h4><strong>Packed vs Unpacked</strong></h4>\n<p>What is the difference between the usage of packed decimal arithmetic vs unpacked decimal arithmetic?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "forward frog",
+                  "time": "2021-08-01T19:28:22.000Z",
+                  "msg": "<p><img src=\"https://deanza.instructure.com/users/181140/files/5642763/preview?verifier=WQK3GqjNpOGfKqKR2pfHbN0JIRtjQQnrKSYDzLCW\" alt=\"Screenshot 2021-08-01 122502.jpg\" data-api-endpoint=\"https://deanza.instructure.com/api/v1/users/181140/files/5642763\" data-api-returntype=\"File\" style=\"max-width: 1040px;\"></p>\n<p>TLDR</p>\n<p>The arithmetic is the same, but the size of the byte is different. It is more of a fancy way to describe the size of the number.&nbsp;</p>\n<p>Unpacked are excess bytes that are not needed to depict the values.</p>\n<p>Packed are truncated values that depict needed values.</p>\n<p>Here are some helpful links</p>\n<p><a href=\"https://www.quora.com/What-is-the-difference-between-packed-BCD-and-unpacked-BCD\" target=\"_blank\" class=\"external\" rel=\"noreferrer noopener\"><span>https://www.quora.com/What-is-the-difference-between-packed-BCD-and-unpacked-BCD</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a></p>\n<p><a href=\"https://en.wikipedia.org/wiki/Binary-coded_decimal#Packed_BCD\" target=\"_blank\" class=\"external\" rel=\"noreferrer noopener\"><span>https://en.wikipedia.org/wiki/Binary-coded_decimal#Packed_BCD</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a></p>\n<p>&nbsp;</p>"
+               },
+               "replies": [
+                  {
+                     "entry": {
+                        "title": "federal firefly",
+                        "time": "2021-08-02T00:07:32.000Z",
+                        "msg": "BCD = each decimal digit is stored in one byte<br>Packed BCD = each decimal digit is stored in 4 bits(2 digits per byte)"
+                     },
+                     "replies": []
+                  },
+                  {
+                     "entry": {
+                        "title": "striking snipe",
+                        "time": "2021-08-02T03:01:43.000Z",
+                        "msg": "<p>Thank you, this explanation from wiki is very helpful:</p>\n<p><span>\"In&nbsp;</span><a title=\"Byte\" href=\"https://en.wikipedia.org/wiki/Byte\" class=\"external\" target=\"_blank\" rel=\"noreferrer noopener\"><span>byte</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a><span>-oriented systems (i.e. most modern computers), the term&nbsp;</span><i>unpacked</i><span>&nbsp;BCD</span><sup id=\"cite_ref-Intel_IA32_1-0\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Binary-coded_decimal#cite_note-Intel_IA32-1\" class=\"external\" target=\"_blank\" rel=\"noreferrer noopener\"><span>[1]</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a></sup><span>&nbsp;usually implies a full byte for each digit (often including a sign), whereas&nbsp;</span><i>packed</i><span>&nbsp;BCD typically encodes two digits within a single byte by taking advantage of the fact that four bits are enough to represent the range 0 to 9. The precise 4-bit encoding, however, may vary for technical reasons\"</span></p>\n<p><span>And also nice to know that BCD, though not used in latest ARM and other implementations, BCD still used in places for banking and other industrial applications where floating point precision is important.</span></p>\n<p><span>\" However, decimal&nbsp;</span><a title=\"Fixed-point arithmetic\" href=\"https://en.wikipedia.org/wiki/Fixed-point_arithmetic\" class=\"external\" target=\"_blank\" rel=\"noreferrer noopener\"><span>fixed-point</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a><span>&nbsp;and&nbsp;</span><a class=\"mw-redirect external\" title=\"Floating-point\" href=\"https://en.wikipedia.org/wiki/Floating-point\" target=\"_blank\" rel=\"noreferrer noopener\"><span>floating-point</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a><span>&nbsp;formats are still important and continue to be used in financial, commercial, and industrial computing, where the subtle conversion and fractional&nbsp;</span><a title=\"Nibble\" href=\"https://en.wikipedia.org/wiki/Round-off_error\" class=\"external\" target=\"_blank\" rel=\"noreferrer noopener\"><span>rounding errors</span><span aria-hidden=\"true\" class=\"ui-icon ui-icon-extlink ui-icon-inline\" title=\"Links to an external site.\"></span><span class=\"screenreader-only\">&nbsp;(Links to an external site.)</span></a><span>&nbsp;that are inherent in floating point binary representations cannot be tolerated. \"</span></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>"
+                     },
+                     "replies": []
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "grand gopher",
+            "time": "2021-08-01T23:11:37.000Z",
+            "msg": "<p>So the textbook starts by introducing this topic and saying that high level languages don't really implement this. What would be the reason for that, if this is used for optimization and security, shouldn't it be available? Would it be something like if you wrote a multiplication operation it would just implement it via shift / rotation when it gets assembled or transformed into machine code?</p>"
+         },
+         "replies": []
+      },
+      {
+         "entry": {
+            "title": "gradual gopher",
+            "time": "2021-08-02T03:08:48.000Z",
+            "msg": "<p><span class=\"textLayer--absolute\">SHL</span></p>\n<p><span class=\"textLayer--absolute\">What does it mean when the SHL (shift left) instruction performs a logical </span><span class=\"textLayer--absolute\">left shift on the destination operand, filling the </span><span class=\"textLayer--absolute\">lowest bit with 0?</span></p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "Cole Gannon",
+                  "time": "2021-08-02T04:12:29.000Z",
+                  "msg": "<p>The way binary digits are written out in MASM is <code>101010b</code> (42 in decimal). Might be a bit contrived but imagine shifting 42 left in decimal. You'd have 420 because the 4 in the 10's column moves left to the 100's column. The 2 in the 1's column moves left to the 10's column. Now let's go back to binary left shifts. The <code>101010b</code> gets left shifted to <code>1010100b</code> and the lowest bit or lowest column is filled with 0.</p>"
+               },
+               "replies": [
+                  {
+                     "entry": {
+                        "title": "broad bird",
+                        "time": "2021-08-02T05:58:46.000Z",
+                        "msg": "<p>Thanks Cole, for the clear explanation!</p>"
+                     },
+                     "replies": []
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "evident earwig",
+            "time": "2021-08-02T03:09:03.000Z",
+            "msg": "<p>How is complex code done with such a small number of registers?</p>\n<p>As we have gone through the chapters, the more complex the code, the more registers are needed for the code to run. For more complex code, I think running out of registers could be a very real possibility. I was wondering if there was a workaround to not run out of registers.</p>"
+         },
+         "replies": []
+      },
+      {
+         "entry": {
+            "title": "radical pigeon",
+            "time": "2021-08-02T14:06:10.000Z",
+            "msg": "<p>So why is multiplication and division fast with using shift and rotate?</p>"
+         },
+         "replies": []
+      }
+   ]
+}

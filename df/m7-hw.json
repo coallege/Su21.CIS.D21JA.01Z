@@ -1,1 +1,418 @@
-{"topic":{"title":"Discussion: HW-M7","time":null,"msg":"<p><span>Post questions about HW-M7.&nbsp;Use the first line of your post as the subject of the post.</span></p>\n<p><span>Section 6.10 problems 5, 7, 8,9, 12 14, 16, 19 Section 6.11.2 problems 1, 2,4</span></p>"},"replies":[{"id":"entry-2990724","entry":{"title":"loose llama","time":"2021-07-23T19:12:33.000Z","msg":"<p>Section 6.11 problem 1: Filling an Array uses Irvine32?</p>\n<p>The description says to fill an array with \"random\" numbers.&nbsp; Should we be using the Irvine32 to generate random numbers or does the description really mean to say \"arbitrary\" numbers as in \"fill it with what ever you want\"?</p>\n<p>I ask because problem 4 specifically says to use Irinve32 but this one doesn't mention it at all.&nbsp; Also, if I do use Irvine32, why not print the numbers instead of using the debugger?</p>"},"replies":[{"id":"entry-2992771","entry":{"title":"loose llama","time":"2021-07-24T16:17:52.000Z","msg":"<p>I ended up just using the Irvine32 library.</p>"},"replies":[]},{"id":"entry-2993771","entry":{"title":"statutory squirrel","time":"2021-07-25T03:45:15.000Z","msg":"<p>Id say just go with Irvine32 just to be sure.</p>"},"replies":[]},{"id":"entry-2994100","entry":{"title":"secure salamander","time":"2021-07-25T05:47:33.000Z","msg":"<p>Just use Irvine32 library. I'm pretty sure everyone else is mostly going to use it.</p>"},"replies":[]},{"id":"entry-2995014","entry":{"title":"impressive hummingbird","time":"2021-07-25T20:04:25.000Z","msg":"<p>Yes i think just use Irvine32 even though it didn't specifically say to</p>"},"replies":[]},{"id":"entry-2995970","entry":{"title":"conceptual catfish","time":"2021-07-26T02:09:00.000Z","msg":"<p>Yes, use the Irvine32 Library.</p>"},"replies":[]},{"id":"entry-2996040","entry":{"title":"close buzzard","time":"2021-07-26T02:29:38.000Z","msg":"<p>Yep, we learned the library in chapter 5 so they are applying it to their problems.</p>"},"replies":[]},{"id":"entry-2996113","entry":{"title":"enormous earthworm","time":"2021-07-26T02:46:41.000Z","msg":"<p>I'd use the Irvine Library</p>"},"replies":[]},{"id":"entry-2996220","entry":{"title":"surviving takin","time":"2021-07-26T03:08:24.000Z","msg":"<p>As redundant as it is outside this class, yes I'd use the Irvine library</p>"},"replies":[]},{"id":"entry-2996631","entry":{"title":"breezy bird","time":"2021-07-26T04:31:16.000Z","msg":"I would follow the Irvine32 just to be safe."},"replies":[]},{"id":"entry-2996806","entry":{"title":"advanced anaconda","time":"2021-07-26T05:03:30.000Z","msg":"<p>Yes, use Irvine32 library to call the procedures that are predefined would save you work.</p>"},"replies":[]},{"id":"entry-2996864","entry":{"title":"consistent centipede","time":"2021-07-26T05:11:36.000Z","msg":"Yes using Irvine32 would be a good option.&nbsp;"},"replies":[]},{"id":"entry-2997111","entry":{"title":"overseas orca","time":"2021-07-26T05:45:50.000Z","msg":"<p>Unfortunately, looks like we have to use the Irvine library for this.</p>"},"replies":[]},{"id":"entry-2997287","entry":{"title":"thin tick","time":"2021-07-26T06:10:28.000Z","msg":"<p>Not entirely sure why we're using the library in all of our problems but it would seem like the right thing to do for this assignment. Especially since we've had to use it so far.</p>"},"replies":[]},{"id":"entry-2997700","entry":{"title":"skilled silkworm","time":"2021-07-26T06:56:37.000Z","msg":"<p>Yes, I have used an Irvine library for this assignment.</p>"},"replies":[]}]},{"id":"entry-2992762","entry":{"title":"professional pigeon","time":"2021-07-24T16:05:06.000Z","msg":"<p>How do we edit the program based on the details given in question 4 of section 6.11.2?</p>"},"replies":[{"id":"entry-2992776","entry":{"title":"loose llama","time":"2021-07-24T16:20:17.000Z","msg":"<p>It's in the Irvine32 library zip file.&nbsp; Unzip then navigate to irvine/examples/ch06/32 bit/Regist.asm.</p>\n<p>It's super small so I'll just paste it here for convenience:</p>\n<pre>; &nbsp;College Registration Example &nbsp; &nbsp; &nbsp; &nbsp; (Regist.asm)<br><br>; Simple demonstration of MASM's .IF,<br>; .ENDIF, and .ELSEIF directives.<br><br>INCLUDE Irvine32.inc<br><br>.data<br>TRUE = 1<br>FALSE = 0<br>gradeAverage &nbsp;WORD 275 &nbsp; &nbsp;; test value<br>credits &nbsp; &nbsp; &nbsp; WORD 12 &nbsp; &nbsp;; test value<br>OkToRegister &nbsp;BYTE ?<br><br>.code<br>main PROC<br><br>&nbsp; &nbsp; mov OkToRegister,FALSE<br><br>&nbsp; &nbsp; .IF gradeAverage &gt; 350<br>&nbsp; &nbsp; &nbsp; &nbsp;mov OkToRegister,TRUE<br>&nbsp; &nbsp; .ELSEIF (gradeAverage &gt; 250) &amp;&amp; (credits &lt;= 16)<br>&nbsp; &nbsp; &nbsp; &nbsp;mov OkToRegister,TRUE<br>&nbsp; &nbsp; .ELSEIF (credits &lt;= 12)<br>&nbsp; &nbsp; &nbsp; &nbsp;mov OkToRegister,TRUE<br>&nbsp; &nbsp; .ENDIF<br><br>&nbsp; &nbsp; exit<br>main ENDP<br><br>END main</pre>"},"replies":[]}]},{"id":"entry-2993570","entry":{"title":"electoral dragon","time":"2021-07-25T01:08:35.000Z","msg":"<p>Just wanted to confirm, are we are doing 6.10.1 problems or 6.10.2?</p>\n<p>Based on the problem numbers 6.10.1 makes more sense as number 12, 14, 16, and 19 dont exist in 6.10.2</p>"},"replies":[{"id":"entry-2993708","entry":{"title":"brief bird","time":"2021-07-25T02:52:12.000Z","msg":"<p>Hey Yash! Pretty sure we're doing the 6.10.1 problems. That's what I'm working on, at least.</p>"},"replies":[]},{"id":"entry-2993776","entry":{"title":"statutory squirrel","time":"2021-07-25T03:47:22.000Z","msg":"<p>I am doing 6.10.1 as well since that makes the most sense to me.</p>"},"replies":[]},{"id":"entry-2994937","entry":{"title":"envious earwig","time":"2021-07-25T19:23:51.000Z","msg":"<p>Yes, we are doing 6.10.1 problems.</p>"},"replies":[]},{"id":"entry-2996459","entry":{"title":"hilarious harrier","time":"2021-07-26T04:00:02.000Z","msg":"<p>yes</p>"},"replies":[]},{"id":"entry-2996635","entry":{"title":"breezy bird","time":"2021-07-26T04:32:07.000Z","msg":"Yes, we are doing 6.10.1 problems."},"replies":[]},{"id":"entry-2997084","entry":{"title":"geographical gopher","time":"2021-07-26T05:41:57.000Z","msg":"<p>It's a bit confusing but the professor wrote it as \"6.10\" which would then inclusively include .1 and .2</p>"},"replies":[]}]},{"id":"entry-2995049","entry":{"title":"ugliest trout","time":"2021-07-25T20:18:42.000Z","msg":"<p><span style=\"font-size: 14pt;\">Question 5</span></p>\n<p><span style=\"font-size: 12pt;\">For question 5, basically is to expand the two ebx to binary then use or to exchange all the 1?</span></p>"},"replies":[{"id":"entry-2995794","entry":{"title":"puzzled pony","time":"2021-07-26T01:12:21.000Z","msg":"<p>I think this is correct approach, essentially performing the OR operation on the binary values of the given hexadecimal numbers.</p>"},"replies":[]},{"id":"entry-2997244","entry":{"title":"driving deer","time":"2021-07-26T06:05:00.000Z","msg":"<p>Hi Jimmy,</p>\n<p>It definitely makes sense to convert it to binary since you need to compare each individual bit in the number. It is very difficult to do it directly with hexadecimal numbers, and I do not know of any other approach. You could always do some of the basic conversions in your head to save time.</p>"},"replies":[]},{"id":"entry-2997484","entry":{"title":"grumpy haddock","time":"2021-07-26T06:32:31.000Z","msg":"<p>Yup, for many of the problems you will have to switch into binary then do the operation.</p>"},"replies":[]}]},{"id":"entry-2995238","entry":{"title":"financial fowl","time":"2021-07-25T21:44:43.000Z","msg":"<p><strong>6.11 Problem 2</strong></p>\n<p>Are we trying to use conditional loops and jumping to each loop depending on the answer that the computer is prompted with? Is it like a typical java loop where if a grade is above or below a certain threshold, it executes one of the loops?</p>"},"replies":[{"id":"entry-2996692","entry":{"title":"spatial snipe","time":"2021-07-26T04:41:15.000Z","msg":"<p>Do you mean Problem #3, because Problem #2 deals with summing of numbers between a given range.&nbsp;&nbsp;</p>\n<p>If it is #3, you can implement using .IF, .ELSEIF, .ENDIF directives or directly use JG, JGE, JL, JLE etc jumps after comparison of array element to calculate its grade.</p>"},"replies":[]}]},{"id":"entry-2995602","entry":{"title":"relaxed python","time":"2021-07-26T00:09:44.000Z","msg":"<p><strong>6.11.2 Problem 2</strong></p>\n<p><strong>Summing Array Elements in a Range<br>Create a procedure that returns the sum of all array elements falling within the range j...k (inclusive). Write a test program that calls the procedure twice, passing a pointer to a signed doubleword array, the size of the array, and the values of j and k. Return the sum in the EAX register,<br>and preserve all other register values between calls to the procedure.</strong></p>\n<p>I'm wondering how should we write a test program that calls the procedure twice? Are we only using loop? Or is there anything else we need to use?</p>"},"replies":[{"id":"entry-2996311","entry":{"title":"entitled earwig","time":"2021-07-26T03:29:34.000Z","msg":"<p>I think it just means to have main call the procedure twice in order to test it.</p>"},"replies":[]},{"id":"entry-2996716","entry":{"title":"insufficient junglefowl","time":"2021-07-26T04:47:20.000Z","msg":"<p>You can choose to write it however you want as long as you call the procedure twice.</p>"},"replies":[]},{"id":"entry-2997721","entry":{"title":"skilled silkworm","time":"2021-07-26T06:58:22.000Z","msg":"<p>Hi Yen-Jung Lu,</p>\n<p>I have used both methods in my assignment. Thanks, for your question.</p>"},"replies":[]}]},{"id":"entry-2995846","entry":{"title":"dizzy cuckoo","time":"2021-07-26T01:29:09.000Z","msg":"<p>Question: 6.10.16&nbsp;</p>\n<p>&nbsp;mov &nbsp;eax,-42<br>&nbsp; &nbsp; cmp &nbsp;eax,26<br>&nbsp; &nbsp; ja &nbsp; Target</p>\n<p>I would think that cmp is not jump since -42d &lt; 26d (base don this rule: <span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem; --darkreader-inline-color:var(--darkreader-text--ic-brand-font-color-dark);\" data-darkreader-inline-color=\"\">Jump if above (if </span><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem; --darkreader-inline-color:var(--darkreader-text--ic-brand-font-color-dark);\" data-darkreader-inline-color=\"\">leftOp &gt;</span><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem; --darkreader-inline-color:var(--darkreader-text--ic-brand-font-color-dark);\" data-darkreader-inline-color=\"\">&nbsp;</span><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem; --darkreader-inline-color:var(--darkreader-text--ic-brand-font-color-dark);\" data-darkreader-inline-color=\"\">rightOp</span><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem; --darkreader-inline-color:var(--darkreader-text--ic-brand-font-color-dark);\" data-darkreader-inline-color=\"\">)</span></p>\n<p>From the text book:</p>\n<p><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem; --darkreader-inline-color:var(--darkreader-text--ic-brand-font-color-dark);\" data-darkreader-inline-color=\"\">mov al,+127 <span>; hexadecimal value is 7Fh</span></span></p>\n<p><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem; --darkreader-inline-color:var(--darkreader-text--ic-brand-font-color-dark);\" data-darkreader-inline-color=\"\">cmp al,-128: <span>; hexadecimal value is 80h</span></span></p>\n<div class=\"page\" title=\"Page 237\">\n<div class=\"section\">\n<div class=\"layoutArea\">\n<div class=\"column\">\n<pre><span>ja   IsAbove ; jump not taken, because 7Fh &lt; 80h<br>jg   IsGreater; jump taken, because +127 &gt; -128 </span></pre>\n</div>\n<div class=\"column\">\n<pre><span>What I am missing here since I see contradiction?<br><br>Thanks if you can help me pointing out!</span></pre>\n</div>\n</div>\n</div>\n</div>"},"replies":[{"id":"entry-2995969","entry":{"title":"Cole Gannon","time":"2021-07-26T02:08:56.000Z","msg":"<p>This has to do with the different jump types. <code>ja</code> is for jumping based on the unsigned value. <code>jg</code> is for jumping based on the signed value. Try running the code below and experimenting with it.</p>\n<pre><code>include &lt;Irvine32.inc&gt;\nincludelib &lt;Irvine32.lib&gt;\nincludelib &lt;Kernel32.lib&gt;\nincludelib &lt;User32.lib&gt;\n\n.data\n   signed_str byte \"signed -42 &gt; 26\", 0\n   unsigned_str byte \"unsigned 0xffffffd6 &gt; 0x0000001a\", 0\n\n.code\nsigned:\n   mov edx, offset signed_str\n   call WriteString\n   invoke ExitProcess, 0\n\nunsigned:\n   mov edx, offset unsigned_str\n   call WriteString\n   invoke ExitProcess, 0\n\nmain:\n   mov eax, -42 ; 0xffffffd6\n   cmp eax, 26  ; 0x0000001a\n\n   jg signed    ; signed comparison. -42 &gt; 26. jump not taken\n   ja unsigned  ; unsigned comparison. 0xffffffd6 &gt; 0x0000001a. jump taken\n\n   invoke ExitProcess, 0\nend main\n</code></pre>"},"replies":[]},{"id":"entry-2996411","entry":{"title":"dizzy cuckoo","time":"2021-07-26T03:49:37.000Z","msg":"<p>Thanks Cole!&nbsp;</p>"},"replies":[]},{"id":"entry-2997101","entry":{"title":"civic bovid","time":"2021-07-26T05:44:58.000Z","msg":"<p>Thank you for the code.</p>"},"replies":[]},{"id":"entry-2997552","entry":{"title":"agricultural ant","time":"2021-07-26T06:39:30.000Z","msg":"<p>thanks for the code, Cole. Its a big help.</p>"},"replies":[]},{"id":"entry-2997714","entry":{"title":"easy dolphin","time":"2021-07-26T06:57:45.000Z","msg":"<p>Thank you, Cole! This is helpful!</p>"},"replies":[]}]},{"id":"entry-2996710","entry":{"title":"Deleted by passive owl on Jul 25 at 9:47pm","time":null,"msg":""},"replies":[]},{"id":"entry-2996720","entry":{"title":"Deleted by passive owl on Jul 25 at 9:48pm","time":null,"msg":""},"replies":[]},{"id":"entry-2996788","entry":{"title":"Deleted by passive owl on Jul 25 at 10:01pm","time":null,"msg":""},"replies":[]},{"id":"entry-2996794","entry":{"title":"passive owl","time":"2021-07-26T05:01:31.000Z","msg":"<p><span>Section 6.11.2 problems 1</span></p>\n<p><span>It said, \"</span><span>When calling the procedure, pass a pointer to the array that will hold the data, pass&nbsp;</span><span>N</span><span>, and pass the values of j and k.\" Do I suppose to move&nbsp; \"OFFSET array\" to ESI here?</span></p>"},"replies":[{"id":"entry-2996921","entry":{"title":"advanced anaconda","time":"2021-07-26T05:20:14.000Z","msg":"<p>Got the same question here. I am wondering if it is asking us to push the arguments on the stack like a function with parameters, or it is asking us to use register/memory to hold the values.</p>"},"replies":[]},{"id":"entry-2997212","entry":{"title":"supposed swordtail","time":"2021-07-26T06:01:08.000Z","msg":"<p>I used registers to pass the arguments and documented them using the documentation format in the book. Example:</p>\n<pre>;-------------<br>MyProc PROC<br>;<br>; A short description of MyProc.<br>; Requires: EAX = what I use eax for<br>;           EBX = what I use ebx for<br>; Returns:  EAX = description of return value<br>;-------------<br>  code for MyProc<br>  ...<br>MyProc ENDP</pre>"},"replies":[]}]},{"id":"entry-2998277","entry":{"title":"moaning mastodon","time":"2021-07-26T18:40:16.000Z","msg":"<p>Can someone give me some pointers on number 2?</p>"},"replies":[{"id":"entry-2998319","entry":{"title":"fixed frog","time":"2021-07-26T18:54:39.000Z","msg":"<p>mov eax, BYTE ptr [number2]</p>\n<p>Since you are given a range of j and k (use hardcoded values), compare the values of the array to j and k (multiple ways to do this). Then iterate over the loop, make sure you are using a pointer system like push and pop functions or ptr.</p>\n<p>That should put you in the right direction.&nbsp;</p>"},"replies":[]}]}]}
+{
+   "topic": {
+      "title": "Discussion: HW-M7",
+      "time": null,
+      "msg": "<p><span>Post questions about HW-M7.&nbsp;Use the first line of your post as the subject of the post.</span></p>\n<p><span>Section 6.10 problems 5, 7, 8,9, 12 14, 16, 19 Section 6.11.2 problems 1, 2,4</span></p>"
+   },
+   "replies": [
+      {
+         "entry": {
+            "title": "married llama",
+            "time": "2021-07-23T19:12:33.000Z",
+            "msg": "<p>Section 6.11 problem 1: Filling an Array uses Irvine32?</p>\n<p>The description says to fill an array with \"random\" numbers.&nbsp; Should we be using the Irvine32 to generate random numbers or does the description really mean to say \"arbitrary\" numbers as in \"fill it with what ever you want\"?</p>\n<p>I ask because problem 4 specifically says to use Irinve32 but this one doesn't mention it at all.&nbsp; Also, if I do use Irvine32, why not print the numbers instead of using the debugger?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "married llama",
+                  "time": "2021-07-24T16:17:52.000Z",
+                  "msg": "<p>I ended up just using the Irvine32 library.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "supposed squirrel",
+                  "time": "2021-07-25T03:45:15.000Z",
+                  "msg": "<p>Id say just go with Irvine32 just to be sure.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "similar salamander",
+                  "time": "2021-07-25T05:47:33.000Z",
+                  "msg": "<p>Just use Irvine32 library. I'm pretty sure everyone else is mostly going to use it.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "inland hummingbird",
+                  "time": "2021-07-25T20:04:25.000Z",
+                  "msg": "<p>Yes i think just use Irvine32 even though it didn't specifically say to</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "conscious catfish",
+                  "time": "2021-07-26T02:09:00.000Z",
+                  "msg": "<p>Yes, use the Irvine32 Library.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "cognitive buzzard",
+                  "time": "2021-07-26T02:29:38.000Z",
+                  "msg": "<p>Yep, we learned the library in chapter 5 so they are applying it to their problems.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "ethnic earthworm",
+                  "time": "2021-07-26T02:46:41.000Z",
+                  "msg": "<p>I'd use the Irvine Library</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "total takin",
+                  "time": "2021-07-26T03:08:24.000Z",
+                  "msg": "<p>As redundant as it is outside this class, yes I'd use the Irvine library</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "broad bird",
+                  "time": "2021-07-26T04:31:16.000Z",
+                  "msg": "I would follow the Irvine32 just to be safe."
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "adverse anaconda",
+                  "time": "2021-07-26T05:03:30.000Z",
+                  "msg": "<p>Yes, use Irvine32 library to call the procedures that are predefined would save you work.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "continuing centipede",
+                  "time": "2021-07-26T05:11:36.000Z",
+                  "msg": "Yes using Irvine32 would be a good option.&nbsp;"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "pleased orca",
+                  "time": "2021-07-26T05:45:50.000Z",
+                  "msg": "<p>Unfortunately, looks like we have to use the Irvine library for this.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "unfair tick",
+                  "time": "2021-07-26T06:10:28.000Z",
+                  "msg": "<p>Not entirely sure why we're using the library in all of our problems but it would seem like the right thing to do for this assignment. Especially since we've had to use it so far.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "spectacular silkworm",
+                  "time": "2021-07-26T06:56:37.000Z",
+                  "msg": "<p>Yes, I have used an Irvine library for this assignment.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "radical pigeon",
+            "time": "2021-07-24T16:05:06.000Z",
+            "msg": "<p>How do we edit the program based on the details given in question 4 of section 6.11.2?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "married llama",
+                  "time": "2021-07-24T16:20:17.000Z",
+                  "msg": "<p>It's in the Irvine32 library zip file.&nbsp; Unzip then navigate to irvine/examples/ch06/32 bit/Regist.asm.</p>\n<p>It's super small so I'll just paste it here for convenience:</p>\n<pre>; &nbsp;College Registration Example &nbsp; &nbsp; &nbsp; &nbsp; (Regist.asm)<br><br>; Simple demonstration of MASM's .IF,<br>; .ENDIF, and .ELSEIF directives.<br><br>INCLUDE Irvine32.inc<br><br>.data<br>TRUE = 1<br>FALSE = 0<br>gradeAverage &nbsp;WORD 275 &nbsp; &nbsp;; test value<br>credits &nbsp; &nbsp; &nbsp; WORD 12 &nbsp; &nbsp;; test value<br>OkToRegister &nbsp;BYTE ?<br><br>.code<br>main PROC<br><br>&nbsp; &nbsp; mov OkToRegister,FALSE<br><br>&nbsp; &nbsp; .IF gradeAverage &gt; 350<br>&nbsp; &nbsp; &nbsp; &nbsp;mov OkToRegister,TRUE<br>&nbsp; &nbsp; .ELSEIF (gradeAverage &gt; 250) &amp;&amp; (credits &lt;= 16)<br>&nbsp; &nbsp; &nbsp; &nbsp;mov OkToRegister,TRUE<br>&nbsp; &nbsp; .ELSEIF (credits &lt;= 12)<br>&nbsp; &nbsp; &nbsp; &nbsp;mov OkToRegister,TRUE<br>&nbsp; &nbsp; .ENDIF<br><br>&nbsp; &nbsp; exit<br>main ENDP<br><br>END main</pre>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "encouraging dragon",
+            "time": "2021-07-25T01:08:35.000Z",
+            "msg": "<p>Just wanted to confirm, are we are doing 6.10.1 problems or 6.10.2?</p>\n<p>Based on the problem numbers 6.10.1 makes more sense as number 12, 14, 16, and 19 dont exist in 6.10.2</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "broken bird",
+                  "time": "2021-07-25T02:52:12.000Z",
+                  "msg": "<p>Hey Yash! Pretty sure we're doing the 6.10.1 problems. That's what I'm working on, at least.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "supposed squirrel",
+                  "time": "2021-07-25T03:47:22.000Z",
+                  "msg": "<p>I am doing 6.10.1 as well since that makes the most sense to me.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "evolutionary earwig",
+                  "time": "2021-07-25T19:23:51.000Z",
+                  "msg": "<p>Yes, we are doing 6.10.1 problems.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "hurt harrier",
+                  "time": "2021-07-26T04:00:02.000Z",
+                  "msg": "<p>yes</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "broad bird",
+                  "time": "2021-07-26T04:32:07.000Z",
+                  "msg": "Yes, we are doing 6.10.1 problems."
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "grand gopher",
+                  "time": "2021-07-26T05:41:57.000Z",
+                  "msg": "<p>It's a bit confusing but the professor wrote it as \"6.10\" which would then inclusively include .1 and .2</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "useful trout",
+            "time": "2021-07-25T20:18:42.000Z",
+            "msg": "<p><span style=\"font-size: 14pt;\">Question 5</span></p>\n<p><span style=\"font-size: 12pt;\">For question 5, basically is to expand the two ebx to binary then use or to exchange all the 1?</span></p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "regulatory pony",
+                  "time": "2021-07-26T01:12:21.000Z",
+                  "msg": "<p>I think this is correct approach, essentially performing the OR operation on the binary values of the given hexadecimal numbers.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "early deer",
+                  "time": "2021-07-26T06:05:00.000Z",
+                  "msg": "<p>Hi Jimmy,</p>\n<p>It definitely makes sense to convert it to binary since you need to compare each individual bit in the number. It is very difficult to do it directly with hexadecimal numbers, and I do not know of any other approach. You could always do some of the basic conversions in your head to save time.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "hollow haddock",
+                  "time": "2021-07-26T06:32:31.000Z",
+                  "msg": "<p>Yup, for many of the problems you will have to switch into binary then do the operation.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "foolish fowl",
+            "time": "2021-07-25T21:44:43.000Z",
+            "msg": "<p><strong>6.11 Problem 2</strong></p>\n<p>Are we trying to use conditional loops and jumping to each loop depending on the answer that the computer is prompted with? Is it like a typical java loop where if a grade is above or below a certain threshold, it executes one of the loops?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "striking snipe",
+                  "time": "2021-07-26T04:41:15.000Z",
+                  "msg": "<p>Do you mean Problem #3, because Problem #2 deals with summing of numbers between a given range.&nbsp;&nbsp;</p>\n<p>If it is #3, you can implement using .IF, .ELSEIF, .ENDIF directives or directly use JG, JGE, JL, JLE etc jumps after comparison of array element to calculate its grade.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "ripe python",
+            "time": "2021-07-26T00:09:44.000Z",
+            "msg": "<p><strong>6.11.2 Problem 2</strong></p>\n<p><strong>Summing Array Elements in a Range<br>Create a procedure that returns the sum of all array elements falling within the range j...k (inclusive). Write a test program that calls the procedure twice, passing a pointer to a signed doubleword array, the size of the array, and the values of j and k. Return the sum in the EAX register,<br>and preserve all other register values between calls to the procedure.</strong></p>\n<p>I'm wondering how should we write a test program that calls the procedure twice? Are we only using loop? Or is there anything else we need to use?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "evident earwig",
+                  "time": "2021-07-26T03:29:34.000Z",
+                  "msg": "<p>I think it just means to have main call the procedure twice in order to test it.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "itchy junglefowl",
+                  "time": "2021-07-26T04:47:20.000Z",
+                  "msg": "<p>You can choose to write it however you want as long as you call the procedure twice.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "spectacular silkworm",
+                  "time": "2021-07-26T06:58:22.000Z",
+                  "msg": "<p>Hi Yen-Jung Lu,</p>\n<p>I have used both methods in my assignment. Thanks, for your question.</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "dry cuckoo",
+            "time": "2021-07-26T01:29:09.000Z",
+            "msg": "<p>Question: 6.10.16&nbsp;</p>\n<p>&nbsp;mov &nbsp;eax,-42<br>&nbsp; &nbsp; cmp &nbsp;eax,26<br>&nbsp; &nbsp; ja &nbsp; Target</p>\n<p>I would think that cmp is not jump since -42d &lt; 26d (base don this rule: <span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;\">Jump if above (if </span><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;\">leftOp &gt;</span><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;\">&nbsp;</span><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;\">rightOp</span><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;\">)</span></p>\n<p>From the text book:</p>\n<p><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;\">mov al,+127 <span>; hexadecimal value is 7Fh</span></span></p>\n<p><span style=\"color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;\">cmp al,-128: <span>; hexadecimal value is 80h</span></span></p>\n<div class=\"page\" title=\"Page 237\">\n<div class=\"section\">\n<div class=\"layoutArea\">\n<div class=\"column\">\n<pre><span>ja   IsAbove ; jump not taken, because 7Fh &lt; 80h<br>jg   IsGreater; jump taken, because +127 &gt; -128 </span></pre>\n</div>\n<div class=\"column\">\n<pre><span>What I am missing here since I see contradiction?<br><br>Thanks if you can help me pointing out!</span></pre>\n</div>\n</div>\n</div>\n</div>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "Cole Gannon",
+                  "time": "2021-07-26T02:08:56.000Z",
+                  "msg": "<p>This has to do with the different jump types. <code>ja</code> is for jumping based on the unsigned value. <code>jg</code> is for jumping based on the signed value. Try running the code below and experimenting with it.</p>\n<pre><code>include &lt;Irvine32.inc&gt;\nincludelib &lt;Irvine32.lib&gt;\nincludelib &lt;Kernel32.lib&gt;\nincludelib &lt;User32.lib&gt;\n\n.data\n   signed_str byte \"signed -42 &gt; 26\", 0\n   unsigned_str byte \"unsigned 0xffffffd6 &gt; 0x0000001a\", 0\n\n.code\nsigned:\n   mov edx, offset signed_str\n   call WriteString\n   invoke ExitProcess, 0\n\nunsigned:\n   mov edx, offset unsigned_str\n   call WriteString\n   invoke ExitProcess, 0\n\nmain:\n   mov eax, -42 ; 0xffffffd6\n   cmp eax, 26  ; 0x0000001a\n\n   jg signed    ; signed comparison. -42 &gt; 26. jump not taken\n   ja unsigned  ; unsigned comparison. 0xffffffd6 &gt; 0x0000001a. jump taken\n\n   invoke ExitProcess, 0\nend main\n</code></pre>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "dry cuckoo",
+                  "time": "2021-07-26T03:49:37.000Z",
+                  "msg": "<p>Thanks Cole!&nbsp;</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "clean bovid",
+                  "time": "2021-07-26T05:44:58.000Z",
+                  "msg": "<p>Thank you for the code.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "alert ant",
+                  "time": "2021-07-26T06:39:30.000Z",
+                  "msg": "<p>thanks for the code, Cole. Its a big help.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "electric dolphin",
+                  "time": "2021-07-26T06:57:45.000Z",
+                  "msg": "<p>Thank you, Cole! This is helpful!</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "Deleted by precious owl on Jul 25 at 9:47pm",
+            "time": null,
+            "msg": ""
+         },
+         "replies": []
+      },
+      {
+         "entry": {
+            "title": "Deleted by precious owl on Jul 25 at 9:48pm",
+            "time": null,
+            "msg": ""
+         },
+         "replies": []
+      },
+      {
+         "entry": {
+            "title": "Deleted by precious owl on Jul 25 at 10:01pm",
+            "time": null,
+            "msg": ""
+         },
+         "replies": []
+      },
+      {
+         "entry": {
+            "title": "precious owl",
+            "time": "2021-07-26T05:01:31.000Z",
+            "msg": "<p><span>Section 6.11.2 problems 1</span></p>\n<p><span>It said, \"</span><span>When calling the procedure, pass a pointer to the array that will hold the data, pass&nbsp;</span><span>N</span><span>, and pass the values of j and k.\" Do I suppose to move&nbsp; \"OFFSET array\" to ESI here?</span></p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "adverse anaconda",
+                  "time": "2021-07-26T05:20:14.000Z",
+                  "msg": "<p>Got the same question here. I am wondering if it is asking us to push the arguments on the stack like a function with parameters, or it is asking us to use register/memory to hold the values.</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "thoughtless swordtail",
+                  "time": "2021-07-26T06:01:08.000Z",
+                  "msg": "<p>I used registers to pass the arguments and documented them using the documentation format in the book. Example:</p>\n<pre>;-------------<br>MyProc PROC<br>;<br>; A short description of MyProc.<br>; Requires: EAX = what I use eax for<br>;           EBX = what I use ebx for<br>; Returns:  EAX = description of return value<br>;-------------<br>  code for MyProc<br>  ...<br>MyProc ENDP</pre>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "near mastodon",
+            "time": "2021-07-26T18:40:16.000Z",
+            "msg": "<p>Can someone give me some pointers on number 2?</p>"
+         },
+         "replies": [
+            {
+               "entry": {
+                  "title": "forward frog",
+                  "time": "2021-07-26T18:54:39.000Z",
+                  "msg": "<p>mov eax, BYTE ptr [number2]</p>\n<p>Since you are given a range of j and k (use hardcoded values), compare the values of the array to j and k (multiple ways to do this). Then iterate over the loop, make sure you are using a pointer system like push and pop functions or ptr.</p>\n<p>That should put you in the right direction.&nbsp;</p>"
+               },
+               "replies": []
+            },
+            {
+               "entry": {
+                  "title": "near mastodon",
+                  "time": "2021-07-29T23:55:58.000Z",
+                  "msg": "<p>That helped me a lot, thanks!!!</p>"
+               },
+               "replies": []
+            }
+         ]
+      },
+      {
+         "entry": {
+            "title": "evident earwig",
+            "time": "2021-08-06T16:41:20.000Z",
+            "msg": "<h4><strong>General Question</strong></h4>\n<p>Could I just write short phrases as answers to the problems in the first section? Would I have to explain in detail how I got my answer?</p>"
+         },
+         "replies": []
+      }
+   ]
+}
