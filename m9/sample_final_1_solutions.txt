@@ -1,0 +1,64 @@
+part 2 Short programs:
+
+Prog 1:
+.code
+	MOV ah, 'r'
+	MOV esi,0
+	MOV ecx, lengthof str1 - 1
+L1:
+	CMP ah, str1[esi]
+	JNE L2
+	CMP ah, str1[esi+1]
+	JNE L2
+	JMP L3
+L2:
+	INC esi
+	LOOP L1
+
+	JMP end
+
+L3:
+	MOV al, str1[esi+1]
+	MOV str1[esi], al
+	LOOP L3
+end:
+
+------------------------------------------
+Prog 2:
+.code
+
+	MOV eax, offset targetStr
+L1:
+	CMP [eax],0
+	JE L2
+	INC eax ; 
+	JMP L1
+L2:
+	MOV ebx, offset sourceStr
+	MOV ecx, lengthof sourceStr - 1
+L3:
+	MOV edx, [ebx] 
+	MOV [eax], edx
+	INC ebx
+	LOOP L3
+
+----------------------------------------------
+Prog 3:
+
+.code
+;assume eax  poiner to array1
+	MOV eax, offset array1 
+	MOV ecx, count - 1
+	PUSH ebx ; ebx is MAX
+
+	MOV ebx, [eax]; holds the max value
+L1:
+	INC eax
+	CMP [eax], ebx 
+	JLE L2
+	MOV ebx, [eax]
+L2:
+	LOOP L1
+	POP ebx
+
+---------------------------------------------

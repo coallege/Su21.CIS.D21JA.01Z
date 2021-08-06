@@ -1,0 +1,146 @@
+Part 1.
+   1.
+      Q: ∀n,m:(n^m)^m=n
+      A: True.
+   2.
+      Q: The TEST instruction always alters the destination operand.
+      A: False.
+   3.
+      Q: ANDing an operand with 1 sets the zero flag if the operand was
+         originally an even number.
+      A: True. An even number implies that the one's bit will not be set,
+         producing zero.
+   4.
+      Q: The XOR instruction inverts each bit in a destination operand.
+      A: False. That's what the NOT instruction does.
+   5.
+      Q: The JBE instruction is used when comparing unsigned integers.
+      A: True.
+   6.
+      Q: The OR instruction can be used to find the intersection of two bit-mapped
+         sets.
+      A: False. 0b01 | 0b10 -> 0b11. Instead of OR, use AND.
+   7.
+      Q: With unsigned operands, the CMP instruction sets the Carry flag when
+         the destination operand is less than the source operand.
+      A: True.
+   8.
+      Q: With signed operands, the CMP instruction makes the Sign flag equal to
+         the Overflow flag when the destination operand is less than the source
+         operand.
+      A: False.
+   9.
+      Q: The MUL instruction sets the Overflow flag if the upper half of the
+         product is not equal to zero.
+      A: True.
+   10.
+      Q: The binary value of AL after the following instructions have executed
+         is 11101101.
+         mov al, 01101011b
+         rol al,2
+      A: False.
+   11.
+      Q: The hexadecimal values of DX and AX after the following instructions
+         have executed are DX=0005 and AX=0000.
+         mov dx,5000h
+         mov ax,20h
+         mul dx
+      A: False.
+   12.
+      Q: The following is a valid LOCAL declaration?
+         LOCAL index:DWORD
+      A: Yes.
+   13.
+      Q: Local variables are stored on the runtime stack, at a higher address
+         than the stack pointer.
+      A: False. The stack grows downwards so locals would be stored below the
+         base pointer.
+   14.
+      Q: The following is a valid LOCAL declaration:
+         LOCAL pArray:DWORD PTR
+      A: False.
+   15.
+      Q: The following is a valid LOCAL declaration:
+         LOCAL LastName:BYTE(25)
+      A: False.
+   16.
+      Q: In 32-bit programs, ADDR and OFFSET return the same value.
+      A: True.
+   17.
+      Q: The CALL instruction can only have a single operand.
+      A: True.
+   18.
+      Q: An indirect operand such as [eax + edi] can be passed to the INVOKE
+         directive.
+      A: True.
+   19.
+      Q: Stack parameters are usually expressed as positive offsets from ESP.
+      A: False. They are usually expressed as negative offsets from EBP.
+
+Part 2.
+   1.
+      .code
+         mov ah, 'r'
+         xor esi, esi
+      top:
+         cmp ah, str1[esi]
+         jne bottom
+      match1:
+         cmp ah, str1[esi + 1]
+         jne bottom
+      move:
+         mov edi, esi
+      moveloop:
+         inc edi
+         cmp edi, lengthof str1
+         je  bottom
+         mov al, str1[edi + 1]
+         mov str1[edi], al
+         jmp moveloop
+      bottom:
+         cmp esi, lengthof str1 - 1
+         jne top
+         jmp end
+      end:
+   2.
+      ; given sourceStr and targetStr
+      ; targetStr <- targetStr:sourceStr
+      ; assume both strings are null terminated
+      .code
+         mov eax, offset targetStr
+         mov ebx, offset sourceStr
+      findEndOfTarget:
+         cmp byte ptr [eax], 0
+         inc eax
+         jnz findEndOfTarget
+      copyToTarget:
+         mov cl, byte ptr [ebx]
+         mov byte ptr [eax], cl
+         cmp cl, 0
+         inc eax
+         inc ebx
+         jnz copyToTarget
+         ; done
+   3.
+      .code
+         FindLargest proc, ary: ptr dword, sz: dword, out: ptr dword
+            pushad
+            xor eax, eax
+            mov esi, ary
+            mov ecx, sz
+         luup:
+            cmp dword ptr [esi], eax
+            jna botm
+            mov eax, dword ptr [esi]
+         botm:
+            inc esi
+            loop luup
+            mov [out], eax
+            popad
+            ret
+         FindLargest endp
+   4.
+      a. 9ah
+      b. 6ah
+      c. 0a9h
+      d. 3ah
