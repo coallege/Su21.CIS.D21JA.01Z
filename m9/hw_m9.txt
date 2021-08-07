@@ -1,0 +1,166 @@
+1.
+   .data
+      ary sdword 10,-20,30,50,40,-2
+   .code
+      FindLargest proc, aPtr: ptr sdword, arraySize: dword
+         mov eax, 80000000h
+         mov esi, aPtr
+         mov ecx, arraySize
+      l1:
+         cmp [esi], eax
+         jng L2
+         mov eax,[esi]
+      l2:
+         add esi,4
+         loop l1
+         ret
+      FindLargest endp
+   main:
+      invoke FindLargest, offset ary, lengthof ary
+      xor eax, eax
+      ret
+
+2.
+   include <Irvine32.inc>
+   includelib <Irvine32.Lib>
+   includelib <Kernel32.Lib>
+   includelib <User32.Lib>
+
+   .code
+   $black:
+      xor eax, eax
+      call SetTextColor
+      mov al, ' '
+      call WriteChar
+      call WriteChar
+      ret
+   $white:
+      mov eax, white * 16
+      call SetTextColor
+      mov al, ' '
+      call WriteChar
+      call WriteChar
+      ret
+   $tile:
+      xor bl, 1
+      jz $black
+      jmp $white
+   $newline:
+      mov al, 10
+      call WriteChar
+      ret
+   $row:
+      push ecx
+      mov ecx, 8
+   $calltile:
+      call $tile
+      loop $calltile
+      xor bl, 1
+      call $newline
+      pop ecx
+      ret
+   main:
+      xor bl, bl
+      mov ecx, 8
+   $callrow:
+      call $row
+      loop $callrow
+      xor eax, eax
+      ret
+   end main
+
+4.
+   .data
+      ary dword 1,2,3,3,4,3,3,3,9
+   .code
+      FindThrees proc, ary: ptr dword, sz: dword
+         mov edi, 1
+      $loop
+         inc edi
+         ; starts at 2
+         mov eax, ary[edi]
+         cmp eax, ary[edi - 1]
+         jne $next
+         cmp eax, ary[edi - 2]
+         je $true
+      $next
+         cmp edi, sz
+         jne $loop
+      $false:
+         xor eax, eax
+         ret
+      $true:
+         mov eax, 1
+         ret
+      FindThrees endp
+
+      main:
+         invoke FindThrees, offset ary, lengthof ary
+         xor eax, eax
+         ret
+5.
+   .code
+      DifferentInputs proc, a: dword, b: dword, c: dword
+         mov eax, a
+         cmp eax, b
+         jne $false
+         cmp eax, c
+         jne $false
+         mov eax, 1
+         ret
+      $false
+         xor eax, eax
+         ret
+      DifferentInputs endp
+
+      main:
+         invoke DifferentInputs, 2, 2, 2
+         xor eax, eax
+         ret
+
+6.
+   .data?
+      ary dword 10 dup(?)
+
+   .code
+      main:
+         call Randomize
+         xor esi, esi
+      $fill:
+         cmp esi, lengthof ary
+         jne $fill$next
+         call Random32
+         mov [ary + esi * type ary], eax
+         inc esi
+         jmp $fill
+      $fill$next:
+         xor esi, esi
+      $swap$loop:
+         cmp esi, lengthof ary
+         jne $swap$loop$next
+         mov eax, [ary + esi * type ary]
+         cmp eax, [ary + esi * type ary + type ary]
+         jbe $swap$next
+         xchg eax, [ary + esi * type ary + type ary]
+         mov [ary + esi * type ary], eax
+      $swap$next:
+         inc esi
+         jmp $swap$loop
+      $swap$loop$next:
+         xor eax, eax
+         ret
+
+7.
+   .code
+      CalcGcd proc, numerator:DWORD, denominator:DWORD
+         mov eax, numerator
+         mov ebx, denominator
+         xor edx, edx
+         div ebx
+         cmp edx, 0
+         je done
+         invoke CalcGcd, ebx, edx
+      done:
+         mov eax, ebx
+         ret
+      CalcGcd ENDP
